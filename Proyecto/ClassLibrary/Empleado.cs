@@ -10,7 +10,7 @@ namespace ClassLibrary
     {
         private string reparticion;
 
-        public string Reparticion1 { get => reparticion; set => reparticion = value; }
+        public string Reparticion { get => reparticion; set => reparticion = value; }
 
         /// <summary>
         /// Constructor de Empleado
