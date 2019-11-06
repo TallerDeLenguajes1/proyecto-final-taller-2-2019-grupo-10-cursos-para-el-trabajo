@@ -14,7 +14,7 @@ namespace AccesoADatos
         /// <summary>
         /// Conectar a la base de datos utilizando el metodo open para abrir la conexion
         /// </summary>
-        /// <param name="ConexionDB"></param>
+        /// <param name="ConexionDB">Conexion para comunicarse con la base de datos</param>
         /// <returns>Devuelve un string con el resultado de la conexion</returns>
         public static string Conectar(MySqlConnection ConexionDB)
         {
@@ -41,7 +41,7 @@ namespace AccesoADatos
         /// <summary>
         /// Desconectar de la base de datos utilizando el metodo close para cerrar la conexion
         /// </summary>
-        /// <param name="ConexionDB"></param>
+        /// <param name="ConexionDB">Conexion para comunicarse con la base de datos</param>
         /// <returns>Devuelve un string con el resultado de la desconexion</returns>
         public static string Desconectar(MySqlConnection ConexionDB)
         {
@@ -49,7 +49,7 @@ namespace AccesoADatos
 
             try
             {
-                /// Revisa si la base de datos esta conectada
+                // Revisa si la base de datos esta conectada
                 if (ConexionDB.State == ConnectionState.Open)
                 {
                     ConexionDB.Close();
