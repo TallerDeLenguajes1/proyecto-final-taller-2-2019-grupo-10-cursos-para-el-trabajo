@@ -158,7 +158,7 @@ namespace AccesoADatos
             {
                 cnn = new MySqlConnection();
 
-                Conexion.Conectar(cnn);
+                cnn = Conexion.Conectar();
 
                 string selectQuery;
 
@@ -280,7 +280,7 @@ namespace AccesoADatos
                     i++;
                 }
 
-                Conexion.Desconectar(cnn);
+                cnn = Conexion.Desconectar();
 
                 mensaje = "Beneficiarios cargados";
 

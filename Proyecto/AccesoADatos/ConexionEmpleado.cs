@@ -266,11 +266,7 @@ namespace AccesoADatos
         /// <returns>Devuelve un string con un mensaje dependiendo del resultado de la accion</returns>
         public static string GetInstructores(List<Instructor> instructores, List<int> ides)
         {
-            instructores = new List<Instructor>();
-
-            ides = new List<int>();
-
-            int i = 0;
+            Instructor instructor;
 
             string mensaje;
 
@@ -278,11 +274,11 @@ namespace AccesoADatos
             {
                 cnn = new MySqlConnection();
 
-                Conexion.Conectar(cnn);
+                cnn = Conexion.Conectar();
 
                 string selectQuery;
 
-                selectQuery = "SELECT idInstructor FROM Instructor";
+                selectQuery = "SELECT * FROM Instructor";
 
                 cmd = new MySqlCommand(selectQuery, cnn);
 
@@ -290,72 +286,20 @@ namespace AccesoADatos
 
                 while (dtr.Read())
                 {
-                    ides[i] = Convert.ToInt32(dtr);
+                    instructor = new Instructor();
 
-                    i++;
+                    ides.Add(Convert.ToInt32(dtr.GetString(0)));
+
+                    instructor.Nombre = dtr.GetString(1);
+
+                    instructor.Apellido = dtr.GetString(2);
+
+                    instructor.DNI = dtr.GetString(3);
+
+                    instructor.Reparticion = dtr.GetString(4);
+
+                    instructores.Add(instructor);
                 }
-
-                i = 0;
-
-                selectQuery = "SELECT Nombre FROM Instructor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    instructores[i].Nombre = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Apellido FROM Instructor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    instructores[i].Apellido = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT DNI FROM Instructor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    instructores[i].DNI = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Reparticion FROM Instructor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    instructores[i].Reparticion = dtr.ToString();
-
-                    i++;
-                }
-
-                Conexion.Desconectar(cnn);
 
                 mensaje = "Instructores cargados";
 
@@ -378,11 +322,7 @@ namespace AccesoADatos
         /// <returns>Devuelve un string con un mensaje dependiendo del resultado de la accion</returns>
         public static string GetTutores(List<Tutor> tutores, List<int> ides)
         {
-            tutores = new List<Tutor>();
-
-            ides = new List<int>();
-
-            int i = 0;
+            Tutor tutor;
 
             string mensaje;
 
@@ -390,11 +330,11 @@ namespace AccesoADatos
             {
                 cnn = new MySqlConnection();
 
-                Conexion.Conectar(cnn);
+                cnn = Conexion.Conectar();
 
                 string selectQuery;
 
-                selectQuery = "SELECT idTutor FROM Tutor";
+                selectQuery = "SELECT * FROM Tutor";
 
                 cmd = new MySqlCommand(selectQuery, cnn);
 
@@ -402,69 +342,19 @@ namespace AccesoADatos
 
                 while (dtr.Read())
                 {
-                    ides[i] = Convert.ToInt32(dtr);
+                    tutor = new Tutor();
 
-                    i++;
-                }
+                    ides.Add(Convert.ToInt32(dtr.GetString(0)));
 
-                i = 0;
+                    tutor.Nombre = dtr.GetString(1);
 
-                selectQuery = "SELECT Nombre FROM Tutor";
+                    tutor.Apellido = dtr.GetString(2);
 
-                cmd = new MySqlCommand(selectQuery, cnn);
+                    tutor.DNI = dtr.GetString(3);
 
-                dtr = cmd.ExecuteReader();
+                    tutor.Reparticion = dtr.GetString(4);
 
-                while (dtr.Read())
-                {
-                    tutores[i].Nombre = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Apellido FROM Tutor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    tutores[i].Apellido = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT DNI FROM Tutor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    tutores[i].DNI = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Reparticion FROM Tutor";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    tutores[i].Reparticion = dtr.ToString();
-
-                    i++;
+                    tutores.Add(tutor);
                 }
 
                 mensaje = "Tutores cargados";
