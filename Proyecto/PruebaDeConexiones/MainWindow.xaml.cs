@@ -69,17 +69,29 @@ namespace PruebaDeConexiones
             //}
 
 
-            instructores = new List<Instructor>();
-            ides = new List<int>();
-            string mensaje;
-            mensaje = ConexionEmpleado.GetInstructores(instructores, ides);
-            MessageBox.Show(mensaje);
-            int i = 0;
-            while (ides.Count > i)
-            {
-                MessageBox.Show(ides[i].ToString() + ", " + instructores[i].Nombre + ", " + instructores[i].Apellido + ", " + instructores[i].DNI + ", " + instructores[i].Reparticion);
-                i++;
-            }
+            //instructores = new List<Instructor>();
+            //ides = new List<int>();
+            //string mensaje;
+            //mensaje = ConexionEmpleado.GetInstructores(instructores, ides);
+            //MessageBox.Show(mensaje);
+            //int i = 0;
+            //while (ides.Count > i)
+            //{
+            //    MessageBox.Show(ides[i].ToString() + ", " + instructores[i].Nombre + ", " + instructores[i].Apellido + ", " + instructores[i].DNI + ", " + instructores[i].Reparticion);
+            //    i++;
+            //}
+
+            //List<Tutor> tutores = new List<Tutor>();
+            //ides = new List<int>();
+            //string mensaje;
+            //mensaje = ConexionEmpleado.GetTutores(tutores, ides);
+            //MessageBox.Show(mensaje);
+            //int i = 0;
+            //while (ides.Count > i)
+            //{
+            //    MessageBox.Show(ides[i].ToString() + ", " + tutores[i].Nombre + ", " + tutores[i].Apellido + ", " + tutores[i].DNI + ", " + tutores[i].Reparticion);
+            //    i++;
+            //}
 
 
             //MySqlConnection conn = Conexion.Conectar();

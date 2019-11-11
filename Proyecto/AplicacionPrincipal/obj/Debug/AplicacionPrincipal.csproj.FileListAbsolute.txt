@@ -24,3 +24,15 @@ G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Aplicac
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\Curso\MenuCurso.baml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\Empleado\ABMAltaEmpleado.baml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\Empleado\MenuEmpleado.baml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\AccesoADatos.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Entidades.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\MySql.Data.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Google.Protobuf.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\BouncyCastle.Crypto.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Renci.SshNet.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\AccesoADatos.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Entidades.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\MySql.Data.xml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Google.Protobuf.xml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Renci.SshNet.xml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal.csproj.CopyComplete

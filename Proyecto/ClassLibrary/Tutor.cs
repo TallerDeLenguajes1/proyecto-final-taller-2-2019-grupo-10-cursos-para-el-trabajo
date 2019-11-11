@@ -15,5 +15,10 @@ namespace Entidades
         {
 
         }
+
+        public override string ToString()
+        {
+            return Apellido + ",  " + Nombre + " - DNI: " + DNI + " - Reparticion: " + Reparticion + " - Funcion: Tutor";
+        }
     }
 }
