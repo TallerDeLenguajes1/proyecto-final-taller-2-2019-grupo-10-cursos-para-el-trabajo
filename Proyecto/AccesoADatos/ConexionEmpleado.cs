@@ -28,11 +28,20 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var InsertQuery = "INSERT INTO Instructor(Nombre, Apellido, DNI, Reparticion) VALUES('" + instructor.Nombre + "', '" + instructor.Apellido + "', '" + instructor.DNI + "', '" + instructor.Reparticion + "' );";
+                //var InsertQuery = "INSERT INTO Instructor(Nombre, Apellido, DNI, Reparticion) VALUES('" + instructor.Nombre + "', '" + instructor.Apellido + "', '" + instructor.DNI + "', '" + instructor.Reparticion + "' );";
+                var InsertQuery = "INSERT INTO Instructor(Nombre, Apellido, DNI, Reparticion) VALUES(@Nombre, @Apellido, @DNI, @Reparticion);";
 
                 try
                 {
                     cmd = new MySqlCommand(InsertQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", instructor.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", instructor.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", instructor.DNI);
+
+                    cmd.Parameters.AddWithValue("@Reparticion", instructor.Reparticion); 
 
                     cmd.ExecuteNonQuery();
 
@@ -68,11 +77,20 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var InsertQuery = "INSERT INTO Tutor(Nombre, Apellido, DNI, Reparticion) VALUES('" + tutor.Nombre + "', '" + tutor.Apellido + "', '" + tutor.DNI + "', '" + tutor.Reparticion + "' );";
+                //var InsertQuery = "INSERT INTO Tutor(Nombre, Apellido, DNI, Reparticion) VALUES('" + tutor.Nombre + "', '" + tutor.Apellido + "', '" + tutor.DNI + "', '" + tutor.Reparticion + "' );";
+                var InsertQuery = "INSERT INTO Tutor(Nombre, Apellido, DNI, Reparticion) VALUES(@Nombre, @Apellido, @DNI, @Reparticion);";
 
                 try
                 {
                     cmd = new MySqlCommand(InsertQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", tutor.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", tutor.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", tutor.DNI);
+
+                    cmd.Parameters.AddWithValue("@Reparticion", tutor.Reparticion);
 
                     cmd.ExecuteNonQuery();
 
@@ -108,11 +126,14 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var deleteQuery = "DELETE FROM Instructor WHERE idInstructor = " + id;
+                //var deleteQuery = "DELETE FROM Instructor WHERE idInstructor = " + id;
+                var deleteQuery = "DELETE FROM Instructor WHERE idInstructor = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(deleteQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 
@@ -148,11 +169,13 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var deleteQuery = "DELETE FROM Tutor WHERE idTutor = " + id;
+                var deleteQuery = "DELETE FROM Tutor WHERE idTutor = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(deleteQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 
@@ -189,11 +212,22 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var updateQuery = "UPDATE Instructor SET Nombre = '" + instructor.Nombre + "', Apellido = '" + instructor.Apellido + "', DNI = '" + instructor.DNI + "', Reparticion = '" + instructor.Reparticion + "' WHERE idInstructor = " + id;
+                //var updateQuery = "UPDATE Instructor SET Nombre = '" + instructor.Nombre + "', Apellido = '" + instructor.Apellido + "', DNI = '" + instructor.DNI + "', Reparticion = '" + instructor.Reparticion + "' WHERE idInstructor = " + id;
+                var updateQuery = "UPDATE Instructor SET Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI, Reparticion = @Reparticion WHERE idInstructor = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(updateQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", instructor.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", instructor.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", instructor.DNI);
+
+                    cmd.Parameters.AddWithValue("@Reparticion", instructor.Reparticion);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 
@@ -230,11 +264,22 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var updateQuery = "UPDATE Tutor SET Nombre = '" + tutor.Nombre + "', Apellido = '" + tutor.Apellido + "', DNI = '" + tutor.DNI + "', Reparticion = '" + tutor.Reparticion + "' WHERE idTutor = " + id;
+                //var updateQuery = "UPDATE Tutor SET Nombre = '" + tutor.Nombre + "', Apellido = '" + tutor.Apellido + "', DNI = '" + tutor.DNI + "', Reparticion = '" + tutor.Reparticion + "' WHERE idTutor = " + id;
+                var updateQuery = "UPDATE Tutor SET Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI, Reparticion = @Reparticion WHERE idTutor = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(updateQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", tutor.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", tutor.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", tutor.DNI);
+
+                    cmd.Parameters.AddWithValue("@Reparticion", tutor.Reparticion);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 

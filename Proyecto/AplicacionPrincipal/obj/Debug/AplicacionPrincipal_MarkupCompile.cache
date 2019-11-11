@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\App.xaml
-51373930891
+7-1651768538
 
-91861795023
+11-575185111
 13-1505183044
-MainWindow.xaml;Vistas\ABMAltaBeneficiario.xaml;Vistas\ABMAltaCurso.xaml;Vistas\ABMAltaInstructor.xaml;Vistas\ABMAltaTutor.xaml;
+MainWindow.xaml;Vistas\Beneficiario\ABMAltaBeneficiario.xaml;Vistas\Beneficiario\MenuBeneficiario.xaml;Vistas\Curso\ABMAltaCurso.xaml;Vistas\Curso\MenuCurso.xaml;Vistas\Empleado\ABMAltaEmpleado.xaml;Vistas\Empleado\MenuEmpleado.xaml;
 
 False
 

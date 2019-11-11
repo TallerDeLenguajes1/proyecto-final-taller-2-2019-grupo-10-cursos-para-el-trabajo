@@ -55,17 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Vistas\ABMAltaBeneficiario.xaml.cs">
+    <Compile Include="Vistas\Beneficiario\ABMAltaBeneficiario.xaml.cs">
       <DependentUpon>ABMAltaBeneficiario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ABMAltaCurso.xaml.cs">
+    <Compile Include="Vistas\Beneficiario\MenuBeneficiario.xaml.cs">
+      <DependentUpon>MenuBeneficiario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Curso\ABMAltaCurso.xaml.cs">
       <DependentUpon>ABMAltaCurso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ABMAltaInstructor.xaml.cs">
-      <DependentUpon>ABMAltaInstructor.xaml</DependentUpon>
+    <Compile Include="Vistas\Curso\MenuCurso.xaml.cs">
+      <DependentUpon>MenuCurso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ABMAltaTutor.xaml.cs">
-      <DependentUpon>ABMAltaTutor.xaml</DependentUpon>
+    <Compile Include="Vistas\Empleado\ABMAltaEmpleado.xaml.cs">
+      <DependentUpon>ABMAltaEmpleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Empleado\MenuEmpleado.xaml.cs">
+      <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,19 +85,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Vistas\ABMAltaBeneficiario.xaml">
+    <Page Include="Vistas\Beneficiario\ABMAltaBeneficiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\ABMAltaCurso.xaml">
+    <Page Include="Vistas\Beneficiario\MenuBeneficiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\ABMAltaInstructor.xaml">
+    <Page Include="Vistas\Curso\ABMAltaCurso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\ABMAltaTutor.xaml">
+    <Page Include="Vistas\Curso\MenuCurso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Empleado\ABMAltaEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Empleado\MenuEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
