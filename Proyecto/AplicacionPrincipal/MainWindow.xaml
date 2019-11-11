@@ -13,12 +13,12 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="Tomato">
+        <Border Grid.Row="0" Background="#20242a">
             <Label Name="lblTitulo" Content="Sistema Informatico" Height="60" Margin="225,10,0,0" VerticalAlignment="Top" Width="380" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <Button x:Name="btnMenuEmpleado" Content="Menu de Empleado" HorizontalAlignment="Center" Height="50" Margin="146,20,146,0" VerticalAlignment="Top" Width="450" Background="SteelBlue" Foreground="Black" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnMenuEmpleado_Click"/>
-        <Button x:Name="btnAltaBeneficiario" Content="Menu de Beneficiario" HorizontalAlignment="Center" Height="50" Margin="146,80,146,0" VerticalAlignment="Top" Width="450" Background="SteelBlue" Foreground="Black" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnAltaBeneficiario_Click"/>
-        <Button x:Name="btnMenuCurso" Content="Menu de Curso" HorizontalAlignment="Center" Height="50" Margin="171,140,171,0" VerticalAlignment="Top" Width="450" Background="SteelBlue" Foreground="Black" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnMenuEmpleado_Click"/>
+        <Button x:Name="btnMenuEmpleado" Content="Menu de Empleado" HorizontalAlignment="Center" Height="50" Margin="146,20,146,0" VerticalAlignment="Top" Width="450" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnMenuEmpleado_Click"/>
+        <Button x:Name="btnAltaBeneficiario" Content="Menu de Beneficiario" HorizontalAlignment="Center" Height="50" Margin="146,80,146,0" VerticalAlignment="Top" Width="450" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnAltaBeneficiario_Click"/>
+        <Button x:Name="btnMenuCurso" Content="Menu de Curso" HorizontalAlignment="Center" Height="50" Margin="171,140,171,0" VerticalAlignment="Top" Width="450" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnMenuEmpleado_Click"/>
 
     </Grid>
 </Window>

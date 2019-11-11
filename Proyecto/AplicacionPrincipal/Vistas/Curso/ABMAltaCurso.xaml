@@ -11,7 +11,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="Tomato">
+        <Border Grid.Row="0" Background="#20242a">
             <Label Name="lblTitulo" Content="Alta de Curso" Height="60" Margin="225,10,0,0" VerticalAlignment="Top" Width="380" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
     </Grid>
