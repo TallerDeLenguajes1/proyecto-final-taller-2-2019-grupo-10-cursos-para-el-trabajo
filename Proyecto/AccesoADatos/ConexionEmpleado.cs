@@ -1,4 +1,4 @@
-﻿using ClassLibrary;
+﻿using Entidades;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -303,6 +303,8 @@ namespace AccesoADatos
 
                 mensaje = "Instructores cargados";
 
+                cnn = Conexion.Desconectar();
+
                 return mensaje;
             }
             catch (Exception ex)
@@ -358,6 +360,8 @@ namespace AccesoADatos
                 }
 
                 mensaje = "Tutores cargados";
+
+                cnn = Conexion.Desconectar();
 
                 return mensaje;
             }

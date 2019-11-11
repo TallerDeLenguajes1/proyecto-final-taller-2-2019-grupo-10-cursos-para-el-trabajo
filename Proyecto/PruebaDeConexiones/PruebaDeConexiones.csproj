@@ -120,9 +120,9 @@
       <Project>{d478ad05-22f2-45bf-9427-e22ed669e88b}</Project>
       <Name>AccesoADatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+    <ProjectReference Include="..\ClassLibrary\Entidades.csproj">
       <Project>{01f9ed89-0ae4-44c8-95f9-9e5442f9c225}</Project>
-      <Name>ClassLibrary</Name>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

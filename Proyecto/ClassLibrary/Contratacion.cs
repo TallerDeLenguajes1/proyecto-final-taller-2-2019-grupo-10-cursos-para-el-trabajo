@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace Entidades
 {
     /// <summary>
     /// Clase abastracta Contratacion de la cual heredan los distintos componentes

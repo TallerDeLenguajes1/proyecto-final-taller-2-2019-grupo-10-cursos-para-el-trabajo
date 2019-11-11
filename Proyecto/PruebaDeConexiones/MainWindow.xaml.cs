@@ -16,7 +16,7 @@ using AccesoADatos;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
-using ClassLibrary;
+using Entidades;
 
 namespace PruebaDeConexiones
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClassLibrary;
+using Entidades;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Data;
@@ -146,11 +146,7 @@ namespace AccesoADatos
         /// <returns>Devuelve un string con un mensaje dependiendo del resultado de la accion</returns>
         public static string GetBeneficiario(List<Beneficiario> beneficiarios, List<int> ides)
         {
-            beneficiarios = new List<Beneficiario>();
-
-            ides = new List<int>();
-
-            int i = 0;
+            Beneficiario beneficiario;
 
             string mensaje;
 
@@ -162,7 +158,7 @@ namespace AccesoADatos
 
                 string selectQuery;
 
-                selectQuery = "SELECT idBeneficiario FROM Beneficiario";
+                selectQuery = "SELECT * FROM Beneficiario";
 
                 cmd = new MySqlCommand(selectQuery, cnn);
 
@@ -170,119 +166,30 @@ namespace AccesoADatos
 
                 while (dtr.Read())
                 {
-                    ides[i] = Convert.ToInt32(dtr);
+                    beneficiario = new Beneficiario();
 
-                    i++;
+                    ides.Add(Convert.ToInt32(dtr.GetString(0)));
+
+                    beneficiario.Nombre = dtr.GetString(1);
+
+                    beneficiario.Apellido = dtr.GetString(2);
+
+                    beneficiario.DNI = dtr.GetString(3);
+
+                    beneficiario.Cuil = dtr.GetString(4);
+
+                    beneficiario.Email = dtr.GetString(5);
+
+                    beneficiario.NivelDeEscolaridad = dtr.GetString(6);
+
+                    beneficiario.Candidato = dtr.GetBoolean(7);
+
+                    beneficiarios.Add(beneficiario);
                 }
-
-                i = 0;
-
-                selectQuery = "SELECT Nombre FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].Nombre = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Apellido FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].Apellido = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT DNI FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].DNI = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Cuil FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].Cuil = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Email FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].Email = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT NivelDeEscolaridad FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].NivelDeEscolaridad = dtr.ToString();
-
-                    i++;
-                }
-
-                i = 0;
-
-                selectQuery = "SELECT Candidato FROM Beneficiario";
-
-                cmd = new MySqlCommand(selectQuery, cnn);
-
-                dtr = cmd.ExecuteReader();
-
-                while (dtr.Read())
-                {
-                    beneficiarios[i].Candidato = Convert.ToBoolean(dtr.ToString());
-
-                    i++;
-                }
-
-                cnn = Conexion.Desconectar();
 
                 mensaje = "Beneficiarios cargados";
+
+                cnn = Conexion.Desconectar();
 
                 return mensaje;
             }

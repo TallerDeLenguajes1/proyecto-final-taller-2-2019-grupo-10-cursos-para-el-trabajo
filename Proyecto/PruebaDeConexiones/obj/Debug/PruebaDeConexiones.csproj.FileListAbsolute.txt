@@ -24,3 +24,10 @@ D:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaD
 D:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.csproj.CopyComplete
 D:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.exe
 D:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.csprojAssemblyReference.cache
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\MainWindow.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\App.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones_MarkupCompile.cache
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones_MarkupCompile.lref
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.exe
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\PruebaDeConexiones\obj\Debug\PruebaDeConexiones.pdb
