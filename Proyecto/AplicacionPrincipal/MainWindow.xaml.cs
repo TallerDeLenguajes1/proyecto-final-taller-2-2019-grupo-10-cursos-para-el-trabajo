@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AplicacionPrincipal.Vistas;
+using AplicacionPrincipal.Vistas.Empleado;
+using AplicacionPrincipal.Vistas.Beneficiario;
+using AplicacionPrincipal.Vistas.Curso;
 
 namespace AplicacionPrincipal
 {
@@ -25,33 +27,27 @@ namespace AplicacionPrincipal
         {
             InitializeComponent();
         }
-
-        private void btnAltaTutor_Click(object sender, RoutedEventArgs e)
-        {
-            ABMAltaTutor frmAltaTutor = new ABMAltaTutor();
-
-            frmAltaTutor.ShowDialog();
-        }
-
-        private void btnAltaInstructor_Click(object sender, RoutedEventArgs e)
-        {
-            ABMAltaInstructor frmAltaInstructor = new ABMAltaInstructor();
-
-            frmAltaInstructor.ShowDialog();
-        }
+     
 
         private void btnAltaBeneficiario_Click(object sender, RoutedEventArgs e)
         {
-            ABMAltaBeneficiario frmAltaBeneficiario = new ABMAltaBeneficiario();
+            MenuBeneficiario frmMenuBeneficiario = new MenuBeneficiario();
 
-            frmAltaBeneficiario.ShowDialog();
+            frmMenuBeneficiario.ShowDialog();
         }
 
-        private void btnAltaCurso_Click(object sender, RoutedEventArgs e)
+        private void btnMenuCurso_Click(object sender, RoutedEventArgs e)
         {
-            ABMAltaCurso frmAltaCurso = new ABMAltaCurso();
+            MenuCurso frmMenuCurso = new MenuCurso();
 
-            frmAltaCurso.ShowDialog();
+            frmMenuCurso.ShowDialog();
+        }
+
+        private void btnMenuEmpleado_Click(object sender, RoutedEventArgs e)
+        {
+            MenuEmpleado frmMenuEmpleado = new MenuEmpleado();
+
+            frmMenuEmpleado.ShowDialog();
         }
     }
 }

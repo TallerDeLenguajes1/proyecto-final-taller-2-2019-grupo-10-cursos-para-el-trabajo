@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AplicacionPrincipal.Vistas
+namespace AplicacionPrincipal.Vistas.Curso
 {
     /// <summary>
-    /// Lógica de interacción para ABMAltaInstructor.xaml
+    /// Lógica de interacción para MenuCurso.xaml
     /// </summary>
-    public partial class ABMAltaInstructor : Window
+    public partial class MenuCurso : Window
     {
-        public ABMAltaInstructor()
+        public MenuCurso()
         {
             InitializeComponent();
         }

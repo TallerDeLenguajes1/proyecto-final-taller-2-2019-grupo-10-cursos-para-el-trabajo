@@ -1,18 +1,18 @@
-﻿<Window x:Class="AplicacionPrincipal.Vistas.ABMAltaInstructor"
+﻿<Window x:Class="AplicacionPrincipal.Vistas.Curso.MenuCurso"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AplicacionPrincipal.Vistas"
+        xmlns:local="clr-namespace:AplicacionPrincipal.Vistas.Curso"
         mc:Ignorable="d"
-        Title="ABMAltaInstructor" Height="450" Width="800">
+        Title="MenuCurso" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Background="Tomato">
-            <Label Name="lblTitulo" Content="Alta de Instructor" Height="60" Margin="225,10,0,0" VerticalAlignment="Top" Width="380" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
+            <Label Name="lblTitulo" Content="Menu de Curso" Height="60" Margin="225,10,0,0" VerticalAlignment="Top" Width="380" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
     </Grid>
 </Window>

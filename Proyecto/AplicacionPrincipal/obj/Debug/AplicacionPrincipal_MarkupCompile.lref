@@ -1,8 +1,10 @@
 ﻿
 
 FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\MainWindow.xaml;;
-FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\ABMAltaBeneficiario.xaml;;
-FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\ABMAltaCurso.xaml;;
-FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\ABMAltaInstructor.xaml;;
-FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\ABMAltaTutor.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Beneficiario\ABMAltaBeneficiario.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Beneficiario\MenuBeneficiario.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Curso\ABMAltaCurso.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Curso\MenuCurso.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Empleado\ABMAltaEmpleado.xaml;;
+FG:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\Vistas\Empleado\MenuEmpleado.xaml;;
 

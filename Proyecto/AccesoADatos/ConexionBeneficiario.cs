@@ -29,11 +29,26 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var InsertQuery = "INSERT INTO Beneficiario(Nombre, Apellido, DNI, Cuil, Email, NivelDeEscolaridad, Candidato) VALUES('" + beneficiario.Nombre + "', '" + beneficiario.Apellido + "', '" + beneficiario.DNI + "', '" + beneficiario.Cuil + "', '" + beneficiario.Email + "', '" + beneficiario.NivelDeEscolaridad + "', '" + beneficiario.Candidato + "' );";
+                //var InsertQuery = "INSERT INTO Beneficiario(Nombre, Apellido, DNI, Cuil, Email, NivelDeEscolaridad, Candidato) VALUES('" + beneficiario.Nombre + "', '" + beneficiario.Apellido + "', '" + beneficiario.DNI + "', '" + beneficiario.Cuil + "', '" + beneficiario.Email + "', '" + beneficiario.NivelDeEscolaridad + "', '" + beneficiario.Candidato + "' );";
+                var InsertQuery = "INSERT INTO Beneficiario(Nombre, Apellido, DNI, Cuil, Email, NivelDeEscolaridad, Candidato) VALUES(@Nombre, @Apellido, @DNI, @Cuil, @Email, @NivelDeEscolaridad, @Candidato);";
 
                 try
                 {
                     cmd = new MySqlCommand(InsertQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", beneficiario.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", beneficiario.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", beneficiario.DNI);
+
+                    cmd.Parameters.AddWithValue("@Cuil", beneficiario.Cuil);
+
+                    cmd.Parameters.AddWithValue("@Email", beneficiario.Email);
+
+                    cmd.Parameters.AddWithValue("@NivelDeEscolaridad", beneficiario.NivelDeEscolaridad);
+
+                    cmd.Parameters.AddWithValue("@Candidato", beneficiario.Candidato);
 
                     cmd.ExecuteNonQuery();
 
@@ -69,11 +84,14 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var deleteQuery = "DELETE FROM Beneficiario WHERE idBeneficiario = " + id;
+                //var deleteQuery = "DELETE FROM Beneficiario WHERE idBeneficiario = " + id;
+                var deleteQuery = "DELETE FROM Beneficiario WHERE idBeneficiario = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(deleteQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 
@@ -110,11 +128,28 @@ namespace AccesoADatos
 
             if (conexionDB.State == ConnectionState.Open)
             {
-                var updateQuery = "UPDATE Beneficiario SET Nombre = '" + beneficiario.Nombre + "', Apellido = '" + beneficiario.Apellido + "', DNI = '" + beneficiario.DNI + "', Cuil = '" + beneficiario.Cuil + "', Email = '" + beneficiario.Email + "', NivelDeEscolaridad = '" + beneficiario.NivelDeEscolaridad + "', Candidato = '" + beneficiario.Candidato + "' WHERE idInstructor = " + id;
+                //var updateQuery = "UPDATE Beneficiario SET Nombre = '" + beneficiario.Nombre + "', Apellido = '" + beneficiario.Apellido + "', DNI = '" + beneficiario.DNI + "', Cuil = '" + beneficiario.Cuil + "', Email = '" + beneficiario.Email + "', NivelDeEscolaridad = '" + beneficiario.NivelDeEscolaridad + "', Candidato = '" + beneficiario.Candidato + "' WHERE idInstructor = " + id;
+                var updateQuery = "UPDATE Beneficiario SET Nombre = @Nombre, Apellido = @Apellido, DNI = @DNI, Cuil = @Cuil, Email = @Email, NivelDeEscolaridad = @NivelDeEscolaridad, Candidato = @Candidato WHERE idInstructor = @id";
 
                 try
                 {
                     cmd = new MySqlCommand(updateQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@Nombre", beneficiario.Nombre);
+
+                    cmd.Parameters.AddWithValue("@Apellido", beneficiario.Apellido);
+
+                    cmd.Parameters.AddWithValue("@DNI", beneficiario.DNI);
+
+                    cmd.Parameters.AddWithValue("@Cuil", beneficiario.Cuil);
+
+                    cmd.Parameters.AddWithValue("@Email", beneficiario.Email);
+
+                    cmd.Parameters.AddWithValue("@NivelDeEscolaridad", beneficiario.NivelDeEscolaridad);
+
+                    cmd.Parameters.AddWithValue("@Candidato", beneficiario.Candidato);
+
+                    cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
 

@@ -68,6 +68,7 @@ namespace PruebaDeConexiones
             //    MessageBox.Show("Error al conectar la base de datos: " + ex.Message);
             //}
 
+
             instructores = new List<Instructor>();
             ides = new List<int>();
             string mensaje;
@@ -80,14 +81,22 @@ namespace PruebaDeConexiones
                 i++;
             }
 
+
             //MySqlConnection conn = Conexion.Conectar();
-            //var query = "SELECT * FROM Instructor";
-            //MySqlCommand cmd = new MySqlCommand(query, conn);
-            //MySqlDataReader dtr = cmd.ExecuteReader();
-            //while (dtr.Read())
-            //{
-            //    MessageBox.Show(dtr.GetString(2));
-            //}
+            ////var query = "SELECT * FROM Instructor";
+            ////MySqlCommand cmd = new MySqlCommand(query, conn);
+            ////MySqlDataReader dtr = cmd.ExecuteReader();
+            ////while (dtr.Read())
+            ////{
+            ////    MessageBox.Show(dtr.GetString(2));
+            ////}
+
+
+            //mensaje = ConexionEmpleado.EliminarInstructor(conn, 3);
+
+            //MessageBox.Show(mensaje);
+
+            //conn = Conexion.Desconectar();
         }
     }
 }
