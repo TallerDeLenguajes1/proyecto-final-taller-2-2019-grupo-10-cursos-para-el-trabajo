@@ -14,6 +14,11 @@
         <Border Grid.Row="0" Background="#20242a">
             <Label Name="lblTitulo" Content="Menu de Empleado" Height="60" Margin="225,10,0,0" VerticalAlignment="Top" Width="380" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <Button x:Name="btnAltaEmpleado" Content="Alta de Empleado" HorizontalAlignment="Center" Height="50" Margin="171,20,171,0" VerticalAlignment="Top" Width="450" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnAltaEmpleado_Click"/>
+        <Button x:Name="btnAltaEmpleado" Content="Alta de Empleado" HorizontalAlignment="Center" Height="50" Margin="10,65,546,0" VerticalAlignment="Top" Width="236" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnAltaEmpleado_Click"/>
+        <ListBox Name="lbxEmpleados" HorizontalAlignment="Left" Height="249" Margin="251,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="LightGoldenrodYellow" SelectionChanged="lbxEmpleados_SelectionChanged"/>
+        <Label x:Name="lblListaEmpleado" Content="Empleados" Height="55" Margin="251,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="Gray"/>
+        <Button x:Name="btnModificarEmpleado" Content="Modificar Empleado" HorizontalAlignment="Center" Height="50" Margin="10,120,546,0" VerticalAlignment="Top" Width="236" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnModificarEmpleado_Click"/>
+        <Button x:Name="btnEliminarEmpleado" Content="Eliminar Empleado" HorizontalAlignment="Center" Height="50" Margin="10,175,546,0" VerticalAlignment="Top" Width="236" Background="#034f9f" Foreground="White" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnEliminarEmpleado_Click"/>
+        <Button x:Name="btnVolver" Content="VOLVER" HorizontalAlignment="Center" Height="40" Margin="10,230,546,0" VerticalAlignment="Top" Width="236" Background="White" Foreground="DimGray" FontSize="25" FontWeight="Normal" Grid.Row="1" Click="btnVolver_Click"/>
     </Grid>
 </Window>

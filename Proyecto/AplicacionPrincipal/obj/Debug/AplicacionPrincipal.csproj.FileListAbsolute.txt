@@ -36,3 +36,5 @@ G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Aplicac
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Google.Protobuf.xml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\Renci.SshNet.xml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal.csproj.CopyComplete
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\Empleado\ABMModificarEmpleado.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\Empleado\ABMModificarEmpleado.baml

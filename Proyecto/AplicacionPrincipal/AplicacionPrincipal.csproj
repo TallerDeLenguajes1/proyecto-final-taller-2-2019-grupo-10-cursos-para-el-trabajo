@@ -90,6 +90,9 @@
     <Compile Include="Vistas\Empleado\ABMAltaEmpleado.xaml.cs">
       <DependentUpon>ABMAltaEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Empleado\ABMModificarEmpleado.xaml.cs">
+      <DependentUpon>ABMModificarEmpleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Empleado\MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Empleado\ABMAltaEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Empleado\ABMModificarEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
