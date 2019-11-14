@@ -75,25 +75,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Vistas\Beneficiario\ABMAltaBeneficiario.xaml.cs">
+    <Compile Include="Vistas\Beneficiariosaf\ABMAltaBeneficiario.xaml.cs">
       <DependentUpon>ABMAltaBeneficiario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Beneficiario\MenuBeneficiario.xaml.cs">
+    <Compile Include="Vistas\Beneficiariosaf\ABMModificarBeneficiaro.xaml.cs">
+      <DependentUpon>ABMModificarBeneficiaro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Beneficiariosaf\MenuBeneficiario.xaml.cs">
       <DependentUpon>MenuBeneficiario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Curso\ABMAltaCurso.xaml.cs">
+    <Compile Include="Vistas\Cursofsafas\ABMAltaCurso.xaml.cs">
       <DependentUpon>ABMAltaCurso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Curso\MenuCurso.xaml.cs">
+    <Compile Include="Vistas\Cursofsafas\MenuCurso.xaml.cs">
       <DependentUpon>MenuCurso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Empleado\ABMAltaEmpleado.xaml.cs">
+    <Compile Include="Vistas\VistaEmpleado\ABMAltaEmpleado.xaml.cs">
       <DependentUpon>ABMAltaEmpleado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Empleado\ABMModificarEmpleado.xaml.cs">
+    <Compile Include="Vistas\VistaEmpleado\ABMModificarEmpleado.xaml.cs">
       <DependentUpon>ABMModificarEmpleado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Empleado\MenuEmpleado.xaml.cs">
+    <Compile Include="Vistas\VistaEmpleado\MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -108,31 +111,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Vistas\Beneficiario\ABMAltaBeneficiario.xaml">
+    <Page Include="Vistas\Beneficiariosaf\ABMAltaBeneficiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Beneficiario\MenuBeneficiario.xaml">
+    <Page Include="Vistas\Beneficiariosaf\ABMModificarBeneficiaro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Curso\ABMAltaCurso.xaml">
+    <Page Include="Vistas\Beneficiariosaf\MenuBeneficiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Curso\MenuCurso.xaml">
+    <Page Include="Vistas\Cursofsafas\ABMAltaCurso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Empleado\ABMAltaEmpleado.xaml">
+    <Page Include="Vistas\Cursofsafas\MenuCurso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Empleado\ABMModificarEmpleado.xaml">
+    <Page Include="Vistas\VistaEmpleado\ABMAltaEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\Empleado\MenuEmpleado.xaml">
+    <Page Include="Vistas\VistaEmpleado\ABMModificarEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistaEmpleado\MenuEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

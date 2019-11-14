@@ -16,11 +16,9 @@ D:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoA
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\AccesoADatos.dll
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\AccesoADatos.pdb
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\BouncyCastle.Crypto.dll
-F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\ClassLibrary.dll
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Google.Protobuf.dll
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\MySql.Data.dll
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Renci.SshNet.dll
-F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\ClassLibrary.pdb
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Google.Protobuf.xml
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\MySql.Data.xml
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Renci.SshNet.xml
@@ -44,3 +42,5 @@ G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoA
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.csproj.CopyComplete
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.dll
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.pdb
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Entidades.dll
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\Entidades.pdb
