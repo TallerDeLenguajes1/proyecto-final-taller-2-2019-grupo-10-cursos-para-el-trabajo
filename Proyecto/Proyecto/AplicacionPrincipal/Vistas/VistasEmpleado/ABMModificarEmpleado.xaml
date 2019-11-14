@@ -1,0 +1,36 @@
+﻿<Window x:Class="AplicacionPrincipal.Vistas.VistasEmpleado.ABMModificarEmpleado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionPrincipal.Vistas.VistasEmpleado"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ABMModificarEmpleado" Height="650" Width="410">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#ff5722">
+            <Label Name="lblTitulo" Content="Modificar Empleado" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
+        </Border>
+        <TextBox x:Name="txtNombre" materialDesign:HintAssist.Hint="Nombre" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtNombre_TextChanged" Margin="88,34,84,430" Grid.Row="1"/>
+        <TextBox x:Name="txtApellido" materialDesign:HintAssist.Hint="Apellido" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="88,114,84,365" TextChanged="txtNombre_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="txtDNI" materialDesign:HintAssist.Hint="DNI" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="88,179,84,295" PreviewTextInput="txtDNI_PreviewTextInput" TextChanged="txtNombre_TextChanged" Grid.Row="1"/>
+        <TextBox x:Name="txtReparticion" materialDesign:HintAssist.Hint="Reparticion" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="88,249,84,215" TextChanged="txtNombre_TextChanged" Grid.Row="1"/>
+        <ComboBox x:Name="cbxFuncion" materialDesign:HintAssist.Hint="Funcion" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="88,317,84,130" Height="42" SelectionChanged="cbxFuncion_SelectionChanged" Grid.Row="1">
+            <ComboBoxItem Content="Instructor"/>
+            <ComboBoxItem Content="Tutor"/>
+        </ComboBox>
+        <Button x:Name="btnAceptar" Content="ACEPTAR" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="88,407,200,50" Grid.Row="1" Click="btnAceptar_Click"/>
+        <Button Name="btnCancelar" Content="CANCELAR" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Margin="204,407,84,50" Grid.Row="1" Click="btnCancelar_Click"/>
+    </Grid>
+</Window>
