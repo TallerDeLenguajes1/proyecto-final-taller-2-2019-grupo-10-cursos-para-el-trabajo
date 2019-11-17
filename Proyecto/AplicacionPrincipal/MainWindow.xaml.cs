@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AplicacionPrincipal.Vistas.VistasEmpleado;
 using AplicacionPrincipal.Vistas.VistasBeneficiario;
+using AplicacionPrincipal.Vistas.VistasCurso;
 
 namespace AplicacionPrincipal
 {
@@ -43,7 +44,9 @@ namespace AplicacionPrincipal
 
         private void btnCurso_Click(object sender, RoutedEventArgs e)
         {
+            MenuCurso frmMenuCurso = new MenuCurso();
 
+            frmMenuCurso.ShowDialog();
         }
 
         private void btnEmpresa_Click(object sender, RoutedEventArgs e)

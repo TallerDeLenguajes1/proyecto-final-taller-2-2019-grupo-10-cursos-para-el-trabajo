@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Beneficiario.cs" />
     <Compile Include="Contratacion.cs" />
+    <Compile Include="Curso.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Instructor.cs" />
     <Compile Include="Monotributista.cs" />

@@ -90,6 +90,15 @@
     <Compile Include="Vistas\VistasBeneficiario\MenuBeneficiario.xaml.cs">
       <DependentUpon>MenuBeneficiario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasCurso\ABMAgregarAlumno.xaml.cs">
+      <DependentUpon>ABMAgregarAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCurso\ABMAltaCurso.xaml.cs">
+      <DependentUpon>ABMAltaCurso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCurso\MenuCurso.xaml.cs">
+      <DependentUpon>MenuCurso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasEmpleado\ABMAltaEmpleado.xaml.cs">
       <DependentUpon>ABMAltaEmpleado.xaml</DependentUpon>
     </Compile>
@@ -120,6 +129,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasBeneficiario\MenuBeneficiario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCurso\ABMAgregarAlumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCurso\ABMAltaCurso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCurso\MenuCurso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -65,7 +65,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             ToolTip="MaterialDesignFloatingActionAccentButton" Margin="11,0,0,10" Height="Auto" Click="btnSalir_Click" Grid.Column="3">
             <materialDesign:PackIcon
-                Kind="CloseBoxOutline"
+                Kind="Reply"
                 Height="42"
                 Width="42" />
         </Button>

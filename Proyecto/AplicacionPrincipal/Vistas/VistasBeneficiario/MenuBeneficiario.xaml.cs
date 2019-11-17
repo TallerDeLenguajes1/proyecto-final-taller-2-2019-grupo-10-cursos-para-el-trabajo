@@ -93,7 +93,7 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
                 MessageBox.Show("Error: " + ex.Message);
             }
 
-            if (frmAltaBeneficiario.GetBeneficiario() != null)
+            if (frmAltaBeneficiario.aceptar)
             {
                 mensaje = ConexionBeneficiario.AgregarBeneficiario(conn, frmAltaBeneficiario.GetBeneficiario());
 

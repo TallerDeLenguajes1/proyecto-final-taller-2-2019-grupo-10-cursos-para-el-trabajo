@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\App.xaml
-7-301890946
+10-1919006336
 
-12-763696050
+151968253677
 29-1701724009
-MainWindow.xaml;Vistas\VistasBeneficiario\ABMAltaBeneficiario.xaml;Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml;Vistas\VistasBeneficiario\MenuBeneficiario.xaml;Vistas\VistasEmpleado\ABMAltaEmpleado.xaml;Vistas\VistasEmpleado\ABMModificarEmpleado.xaml;Vistas\VistasEmpleado\MenuEmpleado.xaml;
+MainWindow.xaml;Vistas\VistasBeneficiario\ABMAltaBeneficiario.xaml;Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml;Vistas\VistasBeneficiario\MenuBeneficiario.xaml;Vistas\VistasCurso\ABMAgregarAlumno.xaml;Vistas\VistasCurso\ABMAltaCurso.xaml;Vistas\VistasCurso\MenuCurso.xaml;Vistas\VistasEmpleado\ABMAltaEmpleado.xaml;Vistas\VistasEmpleado\ABMModificarEmpleado.xaml;Vistas\VistasEmpleado\MenuEmpleado.xaml;
 
 True
 

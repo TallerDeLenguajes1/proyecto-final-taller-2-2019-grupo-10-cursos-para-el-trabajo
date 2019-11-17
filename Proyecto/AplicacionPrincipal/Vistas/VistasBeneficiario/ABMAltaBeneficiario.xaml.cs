@@ -22,7 +22,7 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
     public partial class ABMAltaBeneficiario : Window
     {
          public Beneficiario beneficiario;
-        bool aceptar;
+         public bool aceptar;
 
         public ABMAltaBeneficiario()
         {
@@ -107,6 +107,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 
         private void txtMail_TextChanged(object sender, TextChangedEventArgs e)
         {
+            HabilatarBtnAceptar();
+
             bool validacion;
 
             validacion = ValidarEmail(txtMail.Text);
