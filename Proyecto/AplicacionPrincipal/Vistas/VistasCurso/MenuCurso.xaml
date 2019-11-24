@@ -34,7 +34,7 @@
         <Label x:Name="lblListaCurso" Content="Cursos" Height="55" Margin="22,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#ff5722" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Button Name="btnAltaCursos"
             Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-            ToolTip="MaterialDesignFloatingActionAccentButton" Margin="28,10,23,10" Grid.Row="2" Height="Auto" Width="Auto" Click="btnAltaCursos_Click" Grid.Column="1">
+            ToolTip="MaterialDesignFloatingActionAccentButton" Margin="28,10,27,10" Grid.Row="2" Height="Auto" Width="Auto" Click="btnAltaCursos_Click" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="Add"
                 Height="30"

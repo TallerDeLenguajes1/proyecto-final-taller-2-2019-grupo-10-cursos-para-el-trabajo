@@ -70,58 +70,29 @@ namespace AccesoADatos
         {
             string mensaje;
 
-            var existenciaDelCurso = false;
-
             if (conexionDB.State == ConnectionState.Open)
             {
-                var selectQuery = "SELECT * FROM cursobeneficiaro";
+                var InsertQuery = "INSERT INTO CursoEmpleado(idCurso, idInstructor, idTutor) VALUES(@idCurso, @idInstructor, @idTutor);";
 
-                cmd = new MySqlCommand(selectQuery, conexionDB);
-
-                dtr = cmd.ExecuteReader();
-
-                // Revisa y compara los id para no crear el mismo curso mas de una vez
-                while (dtr.Read() && !existenciaDelCurso)
+                try
                 {
-                    if (idCurso == dtr.GetInt16(1))
-                    {
-                        existenciaDelCurso = true;
-                    }
+                    cmd = new MySqlCommand(InsertQuery, conexionDB);
+
+                    cmd.Parameters.AddWithValue("@idCurso", idCurso);
+
+                    cmd.Parameters.AddWithValue("@idInstructor", idInstructor);
+
+                    cmd.Parameters.AddWithValue("@idTutor", idTutor);
+
+                    cmd.ExecuteNonQuery();
+
+                    mensaje = "Agregado a la base de datos";
+
+                    return mensaje;
                 }
-
-                dtr.Close();
-
-                // Si la existenciaDelCurso es falsa el curso no fue ingresado y se lo puede crear
-                if (!existenciaDelCurso)
+                catch (Exception ex)
                 {
-                    var InsertQuery = "INSERT INTO CursoBeneficiaro(idCurso, idInstructor, idTutor) VALUES(@idCurso, @idInstructor, @idTutor);";
-
-                    try
-                    {
-                        cmd = new MySqlCommand(InsertQuery, conexionDB);
-
-                        cmd.Parameters.AddWithValue("@idCurso", idCurso);
-
-                        cmd.Parameters.AddWithValue("@idInstructor", idInstructor);
-
-                        cmd.Parameters.AddWithValue("@idTutor", idTutor);
-
-                        cmd.ExecuteNonQuery();
-
-                        mensaje = "Agregado a la base de datos";
-
-                        return mensaje;
-                    }
-                    catch (Exception ex)
-                    {
-                        mensaje = "Error: " + ex.Message;
-
-                        return mensaje;
-                    }
-                }
-                else
-                {
-                    mensaje = "El Curso ya fue creado";
+                    mensaje = "Error: " + ex.Message;
 
                     return mensaje;
                 }
@@ -145,9 +116,28 @@ namespace AccesoADatos
         {
             string mensaje;
 
+            // Obtiene los beneficiarios para verificar que no este ya agregado a ese curso
+            var selectQuery = "SELECT * FROM CursoBeneficiario";
+
+            cmd = new MySqlCommand(selectQuery, conexionDB);
+
+            dtr = cmd.ExecuteReader();
+
+            while (dtr.Read())
+            {
+                if (dtr.GetInt32(0) == idCurso && dtr.GetInt32(1) == idBeneficiario)
+                {
+                    mensaje = "El alumno ya esta en el curso seleccionado";
+
+                    return mensaje;
+                }
+            }
+
+            dtr.Close();
+
             if (conexionDB.State == ConnectionState.Open)
             {
-                var InsertQuery = "INSERT INTO CursoBeneficiario(idBeneficiario) VALUES(@idBeneficiario) WHERE idCurso = @idCurso;";
+                var InsertQuery = "INSERT INTO CursoBeneficiario(idCurso, idBeneficiario) VALUES(@idCurso, @idBeneficiario);";
 
                 try
                 {
@@ -177,7 +167,6 @@ namespace AccesoADatos
                 return mensaje;
             }
         }
-
 
 
         public static int GetidCursoTema()
@@ -216,6 +205,239 @@ namespace AccesoADatos
 
 
         public static string GetCursos(List<Curso> cursos, List<int> idesCurso)
+        {
+            Curso curso;
+            Beneficiario beneficiario;
+
+            string mensaje;
+            string selectQuery;
+
+            int idInstructor = 0;
+            int idTutor = 0;
+            int i = 0;
+            int j;
+
+            MySqlCommand cmdPersona;
+            MySqlDataReader dtrEmpleado;
+            MySqlDataReader dtrBeneficiario;
+
+            bool sinAlumnos = true;
+            bool sinInstructor = true;
+            bool sinTutor = true;
+
+            List<int> idesBeneficiarios;
+
+            try
+            {
+                cnn = Conexion.Conectar();
+
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error " + ex.Message;
+
+                return mensaje;
+            }
+
+            // Almacena todos los cursos de la base de datos
+            selectQuery = "SELECT * FROM Curso";
+
+            cmd = new MySqlCommand(selectQuery, cnn);
+
+            dtr = cmd.ExecuteReader();
+
+            while (dtr.Read())
+            {
+                curso = new Curso();
+
+                idesCurso.Add(Convert.ToInt32(dtr.GetString(0)));
+
+                curso.Tema = dtr.GetString(1);
+
+                cursos.Add(curso);
+            }
+
+            dtr.Close();
+
+            // Recorre cada Curso obtenido y obtiene sus respectivos datos
+            while (idesCurso.Count > i)
+            {
+                // Ahora obtiene los beneficiarios asociados a ese curso
+                selectQuery = "SELECT * FROM CursoBeneficiario";
+
+                cmd = new MySqlCommand(selectQuery, cnn);
+
+                idesBeneficiarios = new List<int>();
+
+                dtr = cmd.ExecuteReader();
+
+                while (dtr.Read())
+                {
+                    if (dtr.GetInt32(0) == idesCurso[i])
+                    {
+                        if (!dtr.IsDBNull(1))
+                        {
+                            idesBeneficiarios.Add(dtr.GetInt32(1));
+
+                            sinAlumnos = false;
+                        }
+                    }                    
+                }
+
+                dtr.Close();
+
+                // Ahora obtiene los Empleados asociados a ese curso
+                selectQuery = "SELECT * FROM CursoEmpleado WHERE idCurso = @idCurso";
+
+                cmd = new MySqlCommand(selectQuery, cnn);
+
+                cmd.Parameters.AddWithValue("@idCurso", idesCurso[i]);
+
+                dtr = cmd.ExecuteReader();
+
+                while (dtr.Read())
+                {
+                    if (!dtr.IsDBNull(1))
+                    {
+                        idInstructor = dtr.GetInt32(1);
+
+                        sinInstructor = false;
+                    }
+
+                    if (!dtr.IsDBNull(2))
+                    {
+                        idTutor = dtr.GetInt32(2);
+
+                        sinTutor = false;
+                    }
+                }
+
+                dtr.Close();
+
+                // Una vez obtenido todos los ides asociados al curso actual obtengo los datos de los empleados y beneficiaros de la BD
+
+                // Empieza almacenando todos los alumnos
+                cursos[i].Alumnos = new List<Beneficiario>();
+
+                // Pregunta si aun existen los alumnos en la base de datos
+                if (!sinAlumnos)
+                {
+                    selectQuery = "SELECT * FROM Beneficiario WHERE idBeneficiario = @idBeneficiario";                    
+
+                    j = 0;                    
+
+                    while (idesBeneficiarios.Count > j)
+                    {
+                        cmdPersona = new MySqlCommand(selectQuery, cnn);
+
+                        cmdPersona.Parameters.AddWithValue("@idBeneficiario", idesBeneficiarios[j]);
+
+                        dtrBeneficiario = cmdPersona.ExecuteReader();
+
+                        while (dtrBeneficiario.Read())
+                        {
+                            beneficiario = new Beneficiario();
+
+                            beneficiario.Nombre = dtrBeneficiario.GetString(1);
+
+                            beneficiario.Apellido = dtrBeneficiario.GetString(2);
+
+                            beneficiario.DNI = dtrBeneficiario.GetString(3);
+
+                            beneficiario.Cuil = dtrBeneficiario.GetString(4);
+
+                            beneficiario.Email = dtrBeneficiario.GetString(5);
+
+                            beneficiario.NivelDeEscolaridad = dtrBeneficiario.GetString(6);
+
+                            if (dtrBeneficiario.GetInt16(7) == 1)
+                            {
+                                beneficiario.Candidato = true;
+                            }
+                            else
+                            {
+                                beneficiario.Candidato = false;
+                            }
+
+                            cursos[i].Alumnos.Add(beneficiario);
+                        }
+
+                        j++;
+
+                        dtrBeneficiario.Close();
+                    }
+                }
+
+
+                // Almacena el instructor
+                cursos[i].Instructor = new Instructor();
+
+                // Pregunta si el instructor aun existe en la base de datos
+                if (!sinInstructor)
+                {
+                    selectQuery = "SELECT * FROM Instructor WHERE idInstructor = @idInstructor";
+
+                    cmdPersona = new MySqlCommand(selectQuery, cnn);
+
+                    cmdPersona.Parameters.AddWithValue("@idInstructor", idInstructor);
+
+                    dtrEmpleado = cmdPersona.ExecuteReader();
+
+                    while (dtrEmpleado.Read())
+                    {
+                        cursos[i].Instructor.Nombre = dtrEmpleado.GetString(1);
+
+                        cursos[i].Instructor.Apellido = dtrEmpleado.GetString(2);
+
+                        cursos[i].Instructor.DNI = dtrEmpleado.GetString(3);
+
+                        cursos[i].Instructor.Reparticion = dtrEmpleado.GetString(4);
+                    }
+
+                    dtrEmpleado.Close();
+                }
+
+
+                // Almacena el Tutor
+                cursos[i].Tutor = new Tutor();
+
+                //Pregunta si el tutor aun existe en la base de datos
+                if (!sinTutor)
+                {
+                    selectQuery = "SELECT * FROM Tutor WHERE idTutor = @idTutor";
+
+                    cmdPersona = new MySqlCommand(selectQuery, cnn);
+
+                    cmdPersona.Parameters.AddWithValue("@idTutor", idTutor);
+
+                    dtrEmpleado = cmdPersona.ExecuteReader();
+
+                    while (dtrEmpleado.Read())
+                    {
+                        cursos[i].Tutor.Nombre = dtrEmpleado.GetString(1);
+
+                        cursos[i].Tutor.Apellido = dtrEmpleado.GetString(2);
+
+                        cursos[i].Tutor.DNI = dtrEmpleado.GetString(3);
+
+                        cursos[i].Tutor.Reparticion = dtrEmpleado.GetString(4);
+                    }
+
+                    dtrEmpleado.Close();
+                }                
+
+                i++;
+            }
+
+            mensaje = "Cursos cargados";
+
+            cnn = Conexion.Desconectar();
+
+            return mensaje;
+        }
+
+
+        public static string GetCurso(List<Curso> cursos, List<int> idesCurso)
         {
             Curso curso;
 

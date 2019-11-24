@@ -112,6 +112,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
             ABMAgregarAlumno frmAgregarAlumno = new ABMAgregarAlumno();
 
             frmAgregarAlumno.ShowDialog();
+
+            ActualizarListBox();
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)

@@ -117,6 +117,10 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
 
             InstructorSeleccionado = idesInstructores[lbxInstructores.SelectedIndex];
 
+            lblInstructorAgregado.Foreground = new SolidColorBrush(Colors.Green);
+
+            lblInstructorAgregado.Content = "Instructor Seleccionado";
+
             HabilatarBtnAceptar();
         }
 
@@ -125,6 +129,10 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
             agregadoTutor = true;
 
             tutorSeleccionado = idesTutores[lbxTutor.SelectedIndex];
+
+            lblTutorAgregado.Foreground = new SolidColorBrush(Colors.Green);
+
+            lblTutorAgregado.Content = "Tutor Seleccionado";
 
             HabilatarBtnAceptar();
         }
