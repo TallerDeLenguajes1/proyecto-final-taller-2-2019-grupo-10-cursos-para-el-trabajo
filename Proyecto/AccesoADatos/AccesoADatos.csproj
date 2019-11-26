@@ -66,6 +66,7 @@
     <Compile Include="ConexionContratacion.cs" />
     <Compile Include="ConexionCurso.cs" />
     <Compile Include="ConexionEmpleado.cs" />
+    <Compile Include="ConexionEmpresa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -108,6 +108,15 @@
     <Compile Include="Vistas\VistasEmpleado\MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasEmpresa\ABMAltaEmpresa.xaml.cs">
+      <DependentUpon>ABMAltaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasEmpresa\ABMModificarEmpresa.xaml.cs">
+      <DependentUpon>ABMModificarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasEmpresa\MenuEmpresa.xaml.cs">
+      <DependentUpon>MenuEmpresa.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -153,6 +162,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasEmpleado\MenuEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasEmpresa\ABMAltaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasEmpresa\ABMModificarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasEmpresa\MenuEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

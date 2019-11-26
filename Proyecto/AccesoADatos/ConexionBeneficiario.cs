@@ -256,5 +256,68 @@ namespace AccesoADatos
                 return mensaje;
             }
         }
+
+
+
+        public static string ActualizarCandidatos()
+        {
+            List<int> idesBenfEnCurso = new List<int>();
+            List<int> idesCandidatos = new List<int>();
+
+            string mensaje = "Candidatos actualizados";
+            string selectQuery;
+            string updateQuery;
+
+            try
+            {
+                cnn = Conexion.Conectar();
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+            }
+
+            selectQuery = "SELECT idBeneficiario FROM CursoBeneficiario";
+
+            cmd = new MySqlCommand(selectQuery, cnn);
+
+            dtr = cmd.ExecuteReader();
+
+            while (dtr.Read())
+            {
+                idesBenfEnCurso.Add(dtr.GetInt32(0));
+            }
+
+            dtr.Close();
+
+            // Ordeno la lista para contar los valores que se repiten
+            
+            var ordenarLista = idesBenfEnCurso.GroupBy(x => x).Select(g => new { Value = g.Key, Count = g.Count() }).OrderByDescending(x => x.Count);
+            
+            // x.Value: valor del id, x.Count Cantidad de veces que se repite el id
+            foreach (var x in ordenarLista)
+            {
+                // Si se repite 3 veces o mas (Curso mas de 3 veces) es candidato
+                if (x.Count > 2)
+                {
+                    idesCandidatos.Add(x.Value);
+                }
+            }
+
+            foreach (var candidato in idesCandidatos)
+            {
+                updateQuery = "UPDATE Beneficiario SET Candidato = @Candidato WHERE idBeneficiario = @idBeneficiario;";
+
+                cmd = new MySqlCommand(updateQuery, cnn);
+
+                cmd.Parameters.AddWithValue("@Candidato", 1);
+
+                cmd.Parameters.AddWithValue("@idBeneficiario", candidato);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            return mensaje;
+        }
     }
 }

@@ -137,3 +137,9 @@ F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Aplicac
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal.csproj.CopyComplete
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal.exe
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\MenuEmpresa.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\MenuEmpresa.baml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMAltaEmpresa.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMModificarEmpresa.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMAltaEmpresa.baml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMModificarEmpresa.baml

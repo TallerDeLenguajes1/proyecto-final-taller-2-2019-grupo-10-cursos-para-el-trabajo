@@ -27,11 +27,11 @@
             <RowDefinition Height="64*"/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#ff5722" Grid.ColumnSpan="4">
+        <Border Grid.Row="0" Background="#2196f3" Grid.ColumnSpan="4">
             <Label Name="lblTitulo" Content="Menu de Curso" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <ListBox Name="lbxCursos" HorizontalAlignment="Left" Height="249" Margin="22,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#ffccbc" SelectionChanged="lbxCursos_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-        <Label x:Name="lblListaCurso" Content="Cursos" Height="55" Margin="22,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#ff5722" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <ListBox Name="lbxCursos" HorizontalAlignment="Left" Height="249" Margin="22,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#bbdefb" SelectionChanged="lbxCursos_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblListaCurso" Content="Cursos" Height="55" Margin="22,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Button Name="btnAltaCursos"
             Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
             ToolTip="MaterialDesignFloatingActionAccentButton" Margin="28,10,27,10" Grid.Row="2" Height="Auto" Width="Auto" Click="btnAltaCursos_Click" Grid.Column="1">

@@ -19,7 +19,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#ff5722">
+        <Border Grid.Row="0" Background="#2196f3">
             <Label Name="lblTitulo" Content="Bienvenido al Sistema" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
         <Button Name="btnEmpleado"
@@ -47,7 +47,7 @@
             materialDesign:ShadowAssist.ShadowDepth="Depth2"
             ToolTip="Resource name: MaterialDesignRaisedButton" Width="350" Grid.Row="1" Height="150" Margin="410,179,32,10" Click="btnEmpresa_Click">
             <materialDesign:PackIcon
-                Kind="ServiceToolbox"
+                Kind="BriefcaseOutline"
                 Height="100"
                 Width="100" />
         </Button>

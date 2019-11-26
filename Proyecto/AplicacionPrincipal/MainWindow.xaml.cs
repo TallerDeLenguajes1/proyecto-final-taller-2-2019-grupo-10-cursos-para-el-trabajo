@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using AplicacionPrincipal.Vistas.VistasEmpleado;
 using AplicacionPrincipal.Vistas.VistasBeneficiario;
 using AplicacionPrincipal.Vistas.VistasCurso;
+using AplicacionPrincipal.Vistas.VistasEmpresa;
 
 namespace AplicacionPrincipal
 {
@@ -51,7 +52,9 @@ namespace AplicacionPrincipal
 
         private void btnEmpresa_Click(object sender, RoutedEventArgs e)
         {
+            MenuEmpresa frmMenuEmpleado = new MenuEmpresa();
 
+            frmMenuEmpleado.ShowDialog();
         }
     }
 }

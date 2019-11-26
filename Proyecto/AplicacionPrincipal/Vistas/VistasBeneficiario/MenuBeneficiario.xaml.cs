@@ -32,6 +32,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
         {
             InitializeComponent();
 
+            ConexionBeneficiario.ActualizarCandidatos();
+
             beneficiarios = new List<Beneficiario>();
 
             ides = new List<int>();

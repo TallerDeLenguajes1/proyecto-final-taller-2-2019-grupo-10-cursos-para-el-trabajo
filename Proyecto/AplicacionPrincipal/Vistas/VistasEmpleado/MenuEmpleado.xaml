@@ -19,11 +19,11 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#ff5722">
+        <Border Grid.Row="0" Background="#2196f3">
             <Label Name="lblTitulo" Content="Menu de Empleado" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <ListBox Name="lbxEmpleados" HorizontalAlignment="Left" Height="249" Margin="263,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#ffccbc" SelectionChanged="lbxEmpleados_SelectionChanged"/>
-        <Label x:Name="lblListaEmpleado" Content="Empleados" Height="55" Margin="263,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#ff5722"/>
+        <ListBox Name="lbxEmpleados" HorizontalAlignment="Left" Height="249" Margin="263,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#bbdefb" SelectionChanged="lbxEmpleados_SelectionChanged"/>
+        <Label x:Name="lblListaEmpleado" Content="Empleados" Height="55" Margin="263,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
         <Button Name="btnAltaEmpleado"
             Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
             ToolTip="MaterialDesignFloatingActionAccentButton" Margin="259,250,477,33" Grid.Row="1" Height="40" Width="40" Click="btnAltaEmpleado_Click">

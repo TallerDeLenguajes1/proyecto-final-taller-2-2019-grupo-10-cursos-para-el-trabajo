@@ -11,13 +11,10 @@ namespace Entidades
     /// </summary>
     public abstract class Contratacion
     {
-        private DateTime fechaInicio;
-        private DateTime fechaFinal;
         private string cargo;
         private decimal sueldo;
 
-        public DateTime FechaInicio { get => fechaInicio; set => fechaInicio = value; }
-        public DateTime FechaFinal { get => fechaFinal; set => fechaFinal = value; }
+
         public string Cargo { get => cargo; set => cargo = value; }
         public decimal Sueldo { get => sueldo; set => sueldo = value; }
 
@@ -29,12 +26,5 @@ namespace Entidades
         {
 
         }
-
-
-        /// <summary>
-        /// Método abstracto GetSueldo sin funcionalidad definida en la clase abstracta requiere definición en las clases que hereden de Contratacion
-        /// </summary>
-        /// <returns>Devuelve un valor de tipo decimal</returns>
-        public abstract decimal GetSueldo();
     }
 }
