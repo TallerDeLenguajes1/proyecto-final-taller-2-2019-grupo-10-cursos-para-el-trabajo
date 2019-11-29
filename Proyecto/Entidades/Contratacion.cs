@@ -9,7 +9,7 @@ namespace Entidades
     /// <summary>
     /// Clase abastracta Contratacion de la cual heredan los distintos componentes
     /// </summary>
-    public abstract class Contratacion
+    public class Contratacion
     {
         private string cargo;
         private decimal sueldo;
@@ -25,6 +25,11 @@ namespace Entidades
         public Contratacion()
         {
 
+        }
+
+        public override string ToString()
+        {            
+            return "Cargo: " + Cargo + " - Sueldo: $" + Sueldo;
         }
     }
 }

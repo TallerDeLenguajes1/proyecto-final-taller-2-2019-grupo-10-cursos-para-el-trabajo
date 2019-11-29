@@ -22,7 +22,7 @@
         <Border Grid.Row="0" Background="#2196f3">
             <Label x:Name="lblTitulo" Content="Agregar Alumno" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <ListBox x:Name="lbxBeneficiarios" HorizontalAlignment="Left" Height="180" Margin="54,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="693" Background="#ffccbc" SelectionChanged="lbxBeneficiarios_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <ListBox x:Name="lbxBeneficiarios" HorizontalAlignment="Left" Height="180" Margin="54,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="693" Background="#bbe4fb" SelectionChanged="lbxBeneficiarios_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <Label x:Name="lblListaBeneficiario" Content="Beneficiarios" Height="55" Margin="54,10,0,0" VerticalAlignment="Top" Width="693" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
         <Button x:Name="btnAceptar" Content="AGREGAR" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="194,293,398,10" Grid.Row="1" Click="btnAceptar_Click" Height="Auto"/>
         <Button x:Name="btnCancelar" Content="VOLVER" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Margin="398,293,194,10" Grid.Row="1" Click="btnCancelar_Click" Height="Auto"/>

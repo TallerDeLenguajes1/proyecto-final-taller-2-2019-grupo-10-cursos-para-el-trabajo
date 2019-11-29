@@ -16,7 +16,6 @@ namespace AccesoADatos
         static MySqlConnection cnn;
 
 
-
         /// <summary>
         /// Agrega la empresa a la BD
         /// </summary>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="AplicacionPrincipal.Vistas.VistasEmpresa.ABMContrataciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionPrincipal.Vistas.VistasEmpresa"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ABMContrataciones" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#2196f3">
+            <Label x:Name="lblTitulo" Content="Contrataciones" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
+        </Border>
+        <ListBox x:Name="lbxCandidatos" HorizontalAlignment="Left" Height="180" Margin="54,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="693" Background="#bbe4fb" SelectionChanged="lbxCandidatos_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <Label x:Name="lblListaCandidatos" Content="Candidatos" Height="55" Margin="54,10,0,0" VerticalAlignment="Top" Width="693" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
+        <Button x:Name="btnAceptar" Content="CONTRATAR" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="194,293,398,10" Grid.Row="1" Click="btnAceptar_Click" Height="Auto"/>
+        <Button x:Name="btnCancelar" Content="VOLVER" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Margin="398,293,194,10" Grid.Row="1" Click="btnCancelar_Click" Height="Auto"/>
+    </Grid>
+</Window>

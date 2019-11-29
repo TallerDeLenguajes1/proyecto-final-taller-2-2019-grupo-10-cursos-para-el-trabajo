@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion;
 
 namespace AplicacionPrincipal.Vistas.VistasEmpresa
 {
@@ -177,7 +178,9 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
 
         private void btnContrataciones_Click(object sender, RoutedEventArgs e)
         {
+            MenuContratacion frmMenuContratacion = new MenuContratacion(empresas[lbxEmpresas.SelectedIndex], ides[lbxEmpresas.SelectedIndex]);
 
+            frmMenuContratacion.ShowDialog();
         }
     }
 }

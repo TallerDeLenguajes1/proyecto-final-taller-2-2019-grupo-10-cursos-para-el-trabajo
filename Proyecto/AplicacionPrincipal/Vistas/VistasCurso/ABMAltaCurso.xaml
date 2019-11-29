@@ -15,7 +15,7 @@
         <Border Grid.Row="0" Background="#2196f3">
             <Label x:Name="lblTitulo" Content="Alta Curso" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
-        <ListBox Name="lbxInstructores" HorizontalAlignment="Left" Height="115" Margin="271,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#ffccbc" SelectionChanged="lbxInstructores_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <ListBox Name="lbxInstructores" HorizontalAlignment="Left" Height="115" Margin="271,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#bbdefb" SelectionChanged="lbxInstructores_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <Label x:Name="lblListaInstructores" Content="Instructores" Height="55" Margin="271,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
         <Button Name="btnAgregarInstructor"
             Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
@@ -26,7 +26,7 @@
                 Width="30" />
         </Button>
         <Label Content="Agregar Instructor" HorizontalAlignment="Left" Margin="10,146,0,0" Grid.Row="1" VerticalAlignment="Top" Width="197" Height="47"  HorizontalContentAlignment="Center" FontSize="20"/>
-        <ListBox x:Name="lbxTutor" HorizontalAlignment="Left" Height="115" Margin="271,264,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#ffccbc" SelectionChanged="lbxTutor_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <ListBox x:Name="lbxTutor" HorizontalAlignment="Left" Height="115" Margin="271,264,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#bbdefb" SelectionChanged="lbxTutor_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <Label x:Name="lblListaTutor" Content="Tutores" Height="55" Margin="271,209,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
         <TextBox x:Name="txtTemaCurso" materialDesign:HintAssist.Hint="Tema del Curso" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtTemaCurso_TextChanged" Margin="10,40,526,296" Grid.Row="1"/>
         <Button x:Name="btnAgregarTutor"
