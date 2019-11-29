@@ -1,6 +1,7 @@
 ﻿using AccesoADatos;
 using Entidades;
 using MySql.Data.MySqlClient;
+using Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -217,6 +218,13 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnReporte_Click(object sender, RoutedEventArgs e)
+        {
+            mensaje = Generar.Empleados(instructores, idesInstructores, tutores, idesTutores);
+
+            MessageBox.Show(mensaje);
         }
     }
 }

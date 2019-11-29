@@ -1,0 +1,10 @@
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Reportes.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Reportes.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Entidades.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\EPPlus.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Entidades.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\EPPlus.xml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csprojAssemblyReference.cache
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csproj.CopyComplete
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.pdb

@@ -1,8 +1,11 @@
 ﻿using AccesoADatos;
 using Entidades;
 using MySql.Data.MySqlClient;
+using OfficeOpenXml;
+using OfficeOpenXml.Table;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Reportes;
 
 namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 {
@@ -164,6 +168,13 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnReporte_Click(object sender, RoutedEventArgs e)
+        {
+            mensaje = Generar.Beneficiarios(beneficiarios, ides);
+
+            MessageBox.Show(mensaje);
         }
     }
 }

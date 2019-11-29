@@ -60,5 +60,14 @@
                 Height="42"
                 Width="42" />
         </Button>
+        <Button
+            x:Name="btnReporte"
+            Click="btnReporte_Click"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Height="Auto"
+            materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="631,14,24,269" Grid.Row="1">
+            <TextBlock Text="Generar Reporte"/>
+        </Button>
     </Grid>
 </Window>

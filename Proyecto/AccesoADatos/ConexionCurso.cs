@@ -172,7 +172,6 @@ namespace AccesoADatos
         public static int GetidCursoTema()
         {
             int idCurso = 0;
-
             try
             {
                 cnn = new MySqlConnection();
@@ -180,9 +179,9 @@ namespace AccesoADatos
                 cnn = Conexion.Conectar();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                
+
             }
 
             string selectQuery;
