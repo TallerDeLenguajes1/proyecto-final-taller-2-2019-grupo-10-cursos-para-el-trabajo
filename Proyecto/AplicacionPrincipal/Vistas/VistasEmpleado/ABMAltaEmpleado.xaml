@@ -12,7 +12,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#2196f3">
+        <Border Grid.Row="0" Background="#012e67">
             <Label x:Name="lblTitulo" Content="Alta Empleado" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
         <TextBox x:Name="txtNombre" materialDesign:HintAssist.Hint="Nombre" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtNombre_TextChanged" Margin="88,34,84,430" Grid.Row="1"/>

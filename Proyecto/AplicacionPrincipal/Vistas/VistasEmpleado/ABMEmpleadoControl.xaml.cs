@@ -14,14 +14,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AplicacionPrincipal.Vistas.VistasEmpleado
 {
     /// <summary>
-    /// Lógica de interacción para MenuEmpleado.xaml
+    /// Lógica de interacción para ABMEmpleadoControl.xaml
     /// </summary>
-    public partial class MenuEmpleado : Window
+    public partial class ABMEmpleadoControl : UserControl
     {
         List<Instructor> instructores;
         List<Tutor> tutores;
@@ -32,7 +33,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
         public int id;
         public bool tipoDeEmpleado;
 
-        public MenuEmpleado()
+        public ABMEmpleadoControl()
         {
             InitializeComponent();
 
@@ -46,7 +47,6 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
 
             ActualizarListBox();
         }
-
 
         /// <summary>
         /// Metodo para cargar la listbox con la informacion de la base de datos
@@ -78,6 +78,16 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
             }
 
             lbxEmpleados.Items.Refresh();
+        }
+
+        private void lbxEmpleados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbxEmpleados.SelectedIndex != -1)
+            {
+                btnModificarEmpleado.IsEnabled = true;
+
+                btnEliminarEmpleado.IsEnabled = true;
+            }
         }
 
         private void btnAltaEmpleado_Click(object sender, RoutedEventArgs e)
@@ -132,7 +142,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
                 tipoDeEmpleado = false;
             }
 
-            ABMModificarEmpleado frmModificiarEmpleado = new ABMModificarEmpleado();
+            ABMModificarEmpleado frmModificiarEmpleado = new ABMModificarEmpleado(id, tipoDeEmpleado, idesInstructores, idesTutores);
 
             frmModificiarEmpleado.ShowDialog();
 
@@ -200,27 +210,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
             conn = Conexion.Desconectar();
         }
 
-        /// <summary>
-        /// Metodo para habilitar el boton de Eliminar y Modificar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lbxEmpleados_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (lbxEmpleados.SelectedIndex != -1)
-            {
-                btnModificarEmpleado.IsEnabled = true;
-
-                btnEliminarEmpleado.IsEnabled = true;
-            }
-        }
-
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnReporte_Click(object sender, RoutedEventArgs e)
+        private void btnGenerarReporte_Click(object sender, RoutedEventArgs e)
         {
             mensaje = Generar.Empleados(instructores, idesInstructores, tutores, idesTutores);
 

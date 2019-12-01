@@ -1,67 +1,85 @@
-﻿<Window x:Class="AplicacionPrincipal.MainWindow"
+﻿<Window x:Class="PopUpMenu.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AplicacionPrincipal"
-        mc:Ignorable="d"
-        WindowState="Maximized"
+        xmlns:local="clr-namespace:PopUpMenu"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        TextElement.FontWeight="Regular"
-        TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal"
-        TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#2196f3">
-            <Label Name="lblTitulo" Content="Bienvenido al Sistema" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
-        </Border>
-        <Button Name="btnEmpleado"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Width="350" Grid.Row="1" Height="150" Margin="32,14,410,175" Click="btnEmpleado_Click">
-            <materialDesign:PackIcon
-                Kind="Worker"
-                Height="100"
-                Width="100" />
-        </Button>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Empleado" Height="30" Width="190" Foreground="White" TextAlignment="Center" Margin="112,130,490,179" FontSize="20"/>
-        <Button Name="btnBeneficiario"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Width="350" Grid.Row="1" Height="150" Margin="410,14,32,175" Click="btnBeneficiario_Click">
-            <materialDesign:PackIcon
-                Kind="PersonBadge"
-                Height="90"
-                Width="100" />
-        </Button>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Beneficiario" Height="30" Width="190" Foreground="White" TextAlignment="Center" Margin="488,130,114,179" FontSize="20"/>
-        <Button x:Name="btnEmpresa"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Width="350" Grid.Row="1" Height="150" Margin="410,179,32,10" Click="btnEmpresa_Click">
-            <materialDesign:PackIcon
-                Kind="BriefcaseOutline"
-                Height="100"
-                Width="100" />
-        </Button>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Empresa" Height="30" Width="190" Foreground="White" TextAlignment="Center" Margin="488,295,114,14" FontSize="20"/>
-        <Button Name="btnCurso"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Width="350" Grid.Row="1" Height="150" Margin="34,179,408,10" Click="btnCurso_Click">
-            <materialDesign:PackIcon
-                Kind="BookOpenPageVariant"
-                Height="100"
-                Width="100" />
-        </Button>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Curso" Height="30" Width="190" Foreground="White" TextAlignment="Center" Margin="112,295,490,14" FontSize="20"/>
+        FontFamily="Roboto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+    <!--Animacion del menu-->
+    <Window.Resources>
+        <Storyboard x:Key="AbrirMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CerrarMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnAbrirMenu">
+            <BeginStoryboard Storyboard="{StaticResource AbrirMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnCerrarMenu">
+            <BeginStoryboard Storyboard="{StaticResource CerrarMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid Background="LightGray">
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF1D61B2">
+            <TextBlock Text="Sistema de Entrenamiento para el Trabajo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+            <Button x:Name="btnPower" HorizontalAlignment="Right" VerticalAlignment="Center" Height="80" Width="80" Background="Transparent" BorderBrush="Transparent" MouseLeave="btnPower_MouseLeave" MouseEnter="btnPower_MouseEnter" Click="btnPower_Click">
+                <materialDesign:PackIcon Kind="Power" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#012e67" Panel.ZIndex="9999">
+            <StackPanel>
+                <Grid Height="150" Background="White">
+                    <Button x:Name="btnCerrarMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnCerrarMenu_Click" Visibility="Collapsed">
+                        <materialDesign:PackIcon Foreground="#FF113364" Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="btnAbrirMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnAbrirMenu_Click">
+                        <materialDesign:PackIcon Foreground="#FF113364" Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                </Grid>
+                <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1D61B2" SelectionChanged="ListViewMenu_SelectionChanged">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Worker" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="EMPLEADO" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="PersonBadge" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="BENEFICIARIO" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BookOpenPageVariant" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="CURSOS" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BriefcaseOutline" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="EMPRESAS" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridPrincipal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="530" Width="1018">
+
+        </Grid>
     </Grid>
 </Window>

@@ -12,8 +12,8 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#2196f3">
-            <Label x:Name="lblTitulo" Content="Alta Beneficiario" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
+        <Border Grid.Row="0" Background="#012e67">
+            <Label x:Name="lblTitulo" Content="Modificar Beneficiario" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
         <TextBox x:Name="txtNombre" materialDesign:HintAssist.Hint="Nombre" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtNombre_TextChanged" Margin="88,10,84,515" Grid.Row="1"/>
         <TextBox x:Name="txtApellido" materialDesign:HintAssist.Hint="Apellido" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="88,79,84,446" TextChanged="txtNombre_TextChanged" Grid.Row="1"/>

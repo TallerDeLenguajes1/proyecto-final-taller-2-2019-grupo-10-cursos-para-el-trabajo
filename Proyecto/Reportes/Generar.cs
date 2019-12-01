@@ -125,6 +125,7 @@ namespace Reportes
             ExcelWorksheet wsSheet1 = ExcelPkg.Workbook.Worksheets.Add("Hoja1");
 
             // wsSheet1.Cells.Style.Font.Name = "Montserrat";
+            // FontFamily de la hoja
             wsSheet1.Cells.Style.Font.Name = "Roboto";
 
             using (ExcelRange Rng = wsSheet1.Cells["B2:F2"])
@@ -190,6 +191,7 @@ namespace Reportes
             ExcelWorksheet wsSheet2 = ExcelPkg.Workbook.Worksheets.Add("Hoja2");
 
             // wsSheet2.Cells.Style.Font.Name = "Montserrat";
+            // FontFamily de la hoja
             wsSheet2.Cells.Style.Font.Name = "Roboto";
 
             using (ExcelRange Rng = wsSheet2.Cells["B2:F2"])
@@ -255,6 +257,90 @@ namespace Reportes
             wsSheet1.Cells[wsSheet1.Dimension.Address].AutoFitColumns();
             wsSheet2.Cells[wsSheet2.Dimension.Address].AutoFitColumns();
             ExcelPkg.SaveAs(new FileInfo(@"InformeEmpleados.xlsx"));
+
+            return "Informe Creado";
+        }
+
+
+        /// <summary>
+        /// Genera el reporte de los cursos
+        /// </summary>
+        /// <param name="cursos"></param>
+        /// <param name="idesCursos"></param>
+        /// <returns></returns>
+        public static string Cursos(List<Curso> cursos, List<int> idesCursos)
+        {
+            ExcelPackage ExcelPkg = new ExcelPackage();
+            //Crea la hoja1
+            ExcelWorksheet wsSheet1 = ExcelPkg.Workbook.Worksheets.Add("Hoja1");
+
+            // wsSheet1.Cells.Style.Font.Name = "Montserrat";
+            // FontFamily del archivo
+            wsSheet1.Cells.Style.Font.Name = "Roboto";
+
+            // Titulo
+            using (ExcelRange Rng = wsSheet1.Cells["B2:F2"])
+            {
+                Rng.Value = "Informe de Cursos";
+
+                Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(33, 150, 243));
+
+                Rng.Merge = true;
+
+                Rng.Style.Font.Size = 16;
+
+                Rng.Style.Font.Bold = true;
+            }
+
+            // Creo la tabla
+            using (ExcelRange Rng = wsSheet1.Cells["B4:F" + (idesCursos.Count + 4)])
+            {
+                // Acceso indirecto a la clase ExcelTableCollection
+                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblSalesman");
+                //table.Name = "tblSalesman";
+
+                // Establecer posicion y nombre de columnas
+                table.Columns[0].Name = "ID";
+                table.Columns[1].Name = "Tema";
+                table.Columns[2].Name = "Instructor";
+                table.Columns[3].Name = "Tutor";
+                table.Columns[4].Name = "Cantidad de Alumnos";
+
+                //table.ShowHeader = false;
+                table.ShowFilter = true;
+                //table.ShowTotal = true;
+            }
+
+            // Insertar datos en las celdas de la tabla de Excel
+            var i = 5;
+            var indiceBen = 0;
+
+            foreach (var id in idesCursos)
+            {
+                // [ID] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["B" + i++]) { Rng.Value = id; }
+
+                // [TEMA] Columna
+                i--;
+                using (ExcelRange Rng = wsSheet1.Cells["C" + i]) { Rng.Value = cursos[indiceBen].Tema; }
+
+                // [INSTRUCTOR] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["D" + i]) { Rng.Value = cursos[indiceBen].Instructor.Apellido + ", " + cursos[indiceBen].Instructor.Nombre; }
+
+                // [TUTOR] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["E" + i]) { Rng.Value = cursos[indiceBen].Tutor.Apellido + ", " + cursos[indiceBen].Tutor.Nombre; }
+
+                // [CANTIDAD DE ALUMNOS] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["F" + i]) { Rng.Value = cursos[indiceBen].CantidadDeAlumnos(); }
+
+                i++;
+                indiceBen++;
+            }
+
+            wsSheet1.Cells[wsSheet1.Dimension.Address].AutoFitColumns();
+            ExcelPkg.SaveAs(new FileInfo(@"InformeCursos.xlsx"));
 
             return "Informe Creado";
         }

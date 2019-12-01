@@ -88,11 +88,11 @@
     <Compile Include="Vistas\VistasBeneficiario\ABMAltaBeneficiario.xaml.cs">
       <DependentUpon>ABMAltaBeneficiario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasBeneficiario\ABMBeneficiarioControl.xaml.cs">
+      <DependentUpon>ABMBeneficiarioControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml.cs">
       <DependentUpon>ABMModificarBeneficiario.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\VistasBeneficiario\MenuBeneficiario.xaml.cs">
-      <DependentUpon>MenuBeneficiario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasCurso\ABMAgregarAlumno.xaml.cs">
       <DependentUpon>ABMAgregarAlumno.xaml</DependentUpon>
@@ -100,20 +100,23 @@
     <Compile Include="Vistas\VistasCurso\ABMAltaCurso.xaml.cs">
       <DependentUpon>ABMAltaCurso.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\VistasCurso\MenuCurso.xaml.cs">
-      <DependentUpon>MenuCurso.xaml</DependentUpon>
+    <Compile Include="Vistas\VistasCurso\ABMCursoControl.xaml.cs">
+      <DependentUpon>ABMCursoControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasEmpleado\ABMAltaEmpleado.xaml.cs">
       <DependentUpon>ABMAltaEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasEmpleado\ABMEmpleadoControl.xaml.cs">
+      <DependentUpon>ABMEmpleadoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasEmpleado\ABMModificarEmpleado.xaml.cs">
       <DependentUpon>ABMModificarEmpleado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\VistasEmpleado\MenuEmpleado.xaml.cs">
-      <DependentUpon>MenuEmpleado.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\VistasEmpresa\ABMAltaEmpresa.xaml.cs">
       <DependentUpon>ABMAltaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasEmpresa\ABMEmpresaControl.xaml.cs">
+      <DependentUpon>ABMEmpresaControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasEmpresa\ABMModificarEmpresa.xaml.cs">
       <DependentUpon>ABMModificarEmpresa.xaml</DependentUpon>
@@ -143,11 +146,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml">
+    <Page Include="Vistas\VistasBeneficiario\ABMBeneficiarioControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\VistasBeneficiario\MenuBeneficiario.xaml">
+    <Page Include="Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +162,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\VistasCurso\MenuCurso.xaml">
+    <Page Include="Vistas\VistasCurso\ABMCursoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,15 +170,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vistas\VistasEmpleado\ABMEmpleadoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\VistasEmpleado\ABMModificarEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\VistasEmpleado\MenuEmpleado.xaml">
+    <Page Include="Vistas\VistasEmpresa\ABMAltaEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\VistasEmpresa\ABMAltaEmpresa.xaml">
+    <Page Include="Vistas\VistasEmpresa\ABMEmpresaControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

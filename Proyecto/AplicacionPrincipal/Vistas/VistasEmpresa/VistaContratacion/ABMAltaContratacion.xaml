@@ -19,11 +19,11 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#2196f3">
+        <Border Grid.Row="0" Background="#012e67">
             <Label x:Name="lblTitulo" Content="Contrataciones" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
         </Border>
         <ListBox x:Name="lbxCandidatos" HorizontalAlignment="Left" Height="180" Margin="282,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="500" Background="#bbe4fb" SelectionChanged="LbxCandidatos_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
-        <Label x:Name="lblListaCandidatos" Content="Candidatos" Height="55" Margin="282,10,0,0" VerticalAlignment="Top" Width="500" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#2196f3"/>
+        <Label x:Name="lblListaCandidatos" Content="Candidatos" Height="55" Margin="282,10,0,0" VerticalAlignment="Top" Width="500" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#012e67"/>
         <Button x:Name="btnAceptar" Content="CONTRATAR" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="194,293,398,10" Grid.Row="1" Click="BtnAceptar_Click" Height="Auto"/>
         <Button x:Name="btnCancelar" Content="VOLVER" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Margin="398,293,194,10" Grid.Row="1" Click="BtnCancelar_Click" Height="Auto"/>
     </Grid>

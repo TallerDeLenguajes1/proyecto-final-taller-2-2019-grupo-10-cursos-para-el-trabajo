@@ -24,19 +24,18 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
     {
         List<Beneficiario> beneficiarios;
         MySqlConnection conn;
-        MenuCurso abmMenuCurso;
         string mensaje;
-        public List<int> ides;
+        public List<int> idesBeneficiarios;
+        public List<int> idesCss;
         public int id;
 
-        public ABMAgregarAlumno()
+        public ABMAgregarAlumno(int idSeleccionado, List<int> idesCursos)
         {
             InitializeComponent();
 
-            // Guardo el valor de la seleccion de la listbox accediendo a la ventana MenuEmpleado
-            abmMenuCurso = Application.Current.Windows.OfType<MenuCurso>().FirstOrDefault();
+            id = idSeleccionado;
 
-            id = abmMenuCurso.lbxCursos.SelectedIndex;
+            idesCss = idesCursos;
 
             btnAceptar.IsEnabled = false;
 
@@ -52,9 +51,9 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
 
             beneficiarios = new List<Beneficiario>();
 
-            ides = new List<int>();
+            idesBeneficiarios = new List<int>();
 
-            ConexionBeneficiario.GetBeneficiario(beneficiarios, ides);
+            ConexionBeneficiario.GetBeneficiario(beneficiarios, idesBeneficiarios);
             
             foreach (var beneficiario in beneficiarios)
             {
@@ -73,7 +72,7 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
                 MessageBox.Show("Error: " + ex.Message);
             }
 
-            mensaje = ConexionCurso.AgregarAlumno(conn, ides[lbxBeneficiarios.SelectedIndex], abmMenuCurso.ides[id]);
+            mensaje = ConexionCurso.AgregarAlumno(conn, idesBeneficiarios[lbxBeneficiarios.SelectedIndex], idesCss[id]);
 
             MessageBox.Show(mensaje);
         }

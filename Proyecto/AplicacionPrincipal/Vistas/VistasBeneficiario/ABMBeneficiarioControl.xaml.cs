@@ -1,11 +1,9 @@
 ﻿using AccesoADatos;
 using Entidades;
 using MySql.Data.MySqlClient;
-using OfficeOpenXml;
-using OfficeOpenXml.Table;
+using Reportes;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +14,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Reportes;
 
 namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 {
     /// <summary>
-    /// Lógica de interacción para MenuBeneficiario.xaml
+    /// Lógica de interacción para ABMBeneficiarioControl.xaml
     /// </summary>
-    public partial class MenuBeneficiario : Window
+    public partial class ABMBeneficiarioControl : UserControl
     {
         List<Beneficiario> beneficiarios;
         MySqlConnection conn;
@@ -32,7 +30,7 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
         public List<int> ides;
         public int id;
 
-        public MenuBeneficiario()
+        public ABMBeneficiarioControl()
         {
             InitializeComponent();
 
@@ -47,6 +45,7 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 
             ActualizarListBox();
         }
+
 
         /// <summary>
         /// Metodo para cargar la listbox con la informacion de la base de datos
@@ -69,54 +68,12 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
             lbxBeneficiarios.Items.Refresh();
         }
 
-        /// <summary>
-        /// Metodo para habilitar el boton de Eliminar y Modificar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lbxBeneficiarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (lbxBeneficiarios.SelectedIndex != -1)
-            {
-                btnModificarBeneficiario.IsEnabled = true;
-
-                btnEliminarBeneficiario.IsEnabled = true;
-            }
-        }
-
-        private void btnAltaBeneficiario_Click(object sender, RoutedEventArgs e)
-        {
-            ABMAltaBeneficiario frmAltaBeneficiario = new ABMAltaBeneficiario();
-
-            frmAltaBeneficiario.ShowDialog();
-
-            try
-            {
-                conn = Conexion.Conectar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-            if (frmAltaBeneficiario.aceptar)
-            {
-                mensaje = ConexionBeneficiario.AgregarBeneficiario(conn, frmAltaBeneficiario.GetBeneficiario());
-
-                ActualizarListBox();
-
-                MessageBox.Show(mensaje);
-            }
-
-            conn = Conexion.Desconectar();
-        }
-
         private void btnModificarBeneficiario_Click(object sender, RoutedEventArgs e)
         {
             // variable que funciona de indice para los arreglos
             id = lbxBeneficiarios.SelectedIndex;
 
-            ABMModificarBeneficiario frmModificarBeneficiario = new ABMModificarBeneficiario();
+            ABMModificarBeneficiario frmModificarBeneficiario = new ABMModificarBeneficiario(id, ides);
 
             frmModificarBeneficiario.ShowDialog();
 
@@ -165,16 +122,54 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
             ActualizarListBox();
         }
 
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnReporte_Click(object sender, RoutedEventArgs e)
+        private void btnGenerarReporte_Click(object sender, RoutedEventArgs e)
         {
             mensaje = Generar.Beneficiarios(beneficiarios, ides);
 
             MessageBox.Show(mensaje);
+        }
+
+
+        /// <summary>
+        /// Metodo para habilitar el boton de Eliminar y Modificar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbxBeneficiarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbxBeneficiarios.SelectedIndex != -1)
+            {
+                btnModificarBeneficiario.IsEnabled = true;
+
+                btnEliminarBeneficiario.IsEnabled = true;
+            }
+        }
+
+        private void btnAltaBeneficiario_Click(object sender, RoutedEventArgs e)
+        {
+            ABMAltaBeneficiario frmAltaBeneficiario = new ABMAltaBeneficiario();
+
+            frmAltaBeneficiario.ShowDialog();
+
+            try
+            {
+                conn = Conexion.Conectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            if (frmAltaBeneficiario.aceptar)
+            {
+                mensaje = ConexionBeneficiario.AgregarBeneficiario(conn, frmAltaBeneficiario.GetBeneficiario());
+
+                ActualizarListBox();
+
+                MessageBox.Show(mensaje);
+            }
+
+            conn = Conexion.Desconectar();
         }
     }
 }

@@ -23,8 +23,10 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
     /// </summary>
     public partial class ABMModificarEmpleado : Window
     {
-        MenuEmpleado abmMenuEmpleado;
         int seleccion;
+        List<int> idesInstructores;
+        List<int> idesTutores;
+        bool tipoDeEmpleado;
         Instructor instructor;
         Tutor tutor;
         MySqlConnection conn;
@@ -33,14 +35,17 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
         // Variable para conocer si el usiario hizo click en el boton aceptar
         public bool resultado;
 
-        public ABMModificarEmpleado()
+        public ABMModificarEmpleado(int id, bool tipoDeEmp, List<int> idesInst, List<int> idesTut)
         {
             InitializeComponent();
 
-            // Guardo el valor de la seleccion de la listbox accediendo a la ventana MenuEmpleado
-            abmMenuEmpleado = Application.Current.Windows.OfType<MenuEmpleado>().FirstOrDefault();
+            seleccion = id;
 
-            seleccion = abmMenuEmpleado.id;
+            idesInstructores = idesInst;
+
+            idesTutores = idesTut;
+
+            tipoDeEmpleado = tipoDeEmp;
 
             MostrarDatosActuales();
 
@@ -94,17 +99,17 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
                 MessageBox.Show("Error: " + ex.Message);
             }
 
-            if (abmMenuEmpleado.tipoDeEmpleado)
+            if (tipoDeEmpleado)
             {
                 selectQuery = "SELECT * FROM Instructor WHERE idInstructor = @id";
 
-                id = abmMenuEmpleado.idesInstructores[seleccion];
+                id = idesInstructores[seleccion];
             }
             else
             {
                 selectQuery = "SELECT * FROM Tutor WHERE idTutor = @id";
 
-                id = abmMenuEmpleado.idesTutores[seleccion];
+                id = idesTutores[seleccion];
             }
 
             cmd = new MySqlCommand(selectQuery, conn);

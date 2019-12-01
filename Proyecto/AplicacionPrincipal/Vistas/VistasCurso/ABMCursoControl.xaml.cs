@@ -1,6 +1,7 @@
 ﻿using AccesoADatos;
 using Entidades;
 using MySql.Data.MySqlClient;
+using Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AplicacionPrincipal.Vistas.VistasCurso
 {
     /// <summary>
-    /// Lógica de interacción para MenuCurso.xaml
+    /// Lógica de interacción para ABMCursoControl.xaml
     /// </summary>
-    public partial class MenuCurso : Window
+    public partial class ABMCursoControl : UserControl
     {
         List<Curso> cursos;
         MySqlConnection conn;
@@ -28,7 +30,7 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
         public List<int> ides;
         public int id;
 
-        public MenuCurso()
+        public ABMCursoControl()
         {
             InitializeComponent();
 
@@ -76,7 +78,7 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
             }
         }
 
-        private void btnAltaCursos_Click(object sender, RoutedEventArgs e)
+        private void btnAltaCurso_Click(object sender, RoutedEventArgs e)
         {
             int idCursoAlta;
 
@@ -109,16 +111,18 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
 
         private void btnAgregarAlumno_Click(object sender, RoutedEventArgs e)
         {
-            ABMAgregarAlumno frmAgregarAlumno = new ABMAgregarAlumno();
+            ABMAgregarAlumno frmAgregarAlumno = new ABMAgregarAlumno(lbxCursos.SelectedIndex, ides);
 
             frmAgregarAlumno.ShowDialog();
 
             ActualizarListBox();
         }
 
-        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        private void btnGenerarReporte_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            mensaje = Generar.Cursos(cursos, ides);
+
+            MessageBox.Show(mensaje);
         }
     }
 }

@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AplicacionPrincipal.Vistas.VistasEmpleado;
 using AplicacionPrincipal.Vistas.VistasBeneficiario;
+using AplicacionPrincipal.Vistas.VistasEmpleado;
 using AplicacionPrincipal.Vistas.VistasCurso;
 using AplicacionPrincipal.Vistas.VistasEmpresa;
 
-namespace AplicacionPrincipal
+namespace PopUpMenu
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
@@ -29,32 +29,60 @@ namespace AplicacionPrincipal
             InitializeComponent();
         }
 
-        private void btnEmpleado_Click(object sender, RoutedEventArgs e)
+        private void btnCerrarMenu_Click(object sender, RoutedEventArgs e)
         {
-            MenuEmpleado frmMenuEmpleado = new MenuEmpleado();
+            btnAbrirMenu.Visibility = Visibility.Visible;
 
-            frmMenuEmpleado.ShowDialog();
+            btnCerrarMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void btnBeneficiario_Click(object sender, RoutedEventArgs e)
+        private void btnAbrirMenu_Click(object sender, RoutedEventArgs e)
         {
-            MenuBeneficiario frmMenuBeneficiario = new MenuBeneficiario();
+            btnAbrirMenu.Visibility = Visibility.Collapsed;
 
-            frmMenuBeneficiario.ShowDialog();
+            btnCerrarMenu.Visibility = Visibility.Visible;
         }
 
-        private void btnCurso_Click(object sender, RoutedEventArgs e)
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MenuCurso frmMenuCurso = new MenuCurso();
+            int index = ListViewMenu.SelectedIndex;
 
-            frmMenuCurso.ShowDialog();
+            switch (index)
+            {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ABMEmpleadoControl());
+                    break;
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ABMBeneficiarioControl());
+                    break;
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ABMCursoControl());
+                    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new ABMEmpresaControl());
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void btnEmpresa_Click(object sender, RoutedEventArgs e)
+        private void btnPower_Click(object sender, RoutedEventArgs e)
         {
-            MenuEmpresa frmMenuEmpleado = new MenuEmpresa();
+            Application.Current.Shutdown();
+        }
 
-            frmMenuEmpleado.ShowDialog();
+        private void btnPower_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnPower.Foreground = new SolidColorBrush(Color.FromRgb(255, 100, 100));
+        }
+
+        private void btnPower_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnPower.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
         }
     }
 }

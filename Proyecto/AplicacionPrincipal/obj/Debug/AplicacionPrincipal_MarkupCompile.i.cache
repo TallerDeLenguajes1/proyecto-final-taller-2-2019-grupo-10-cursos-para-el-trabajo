@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\
+G:\Backup\Proyecto\AplicacionPrincipal\obj\Debug\
 AplicacionPrincipal
 none
 false
 DEBUG;TRACE
-G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\App.xaml
-15-1088179137
+G:\Backup\Proyecto\AplicacionPrincipal\App.xaml
+16-513286765
 
-20983210162
-32-127470982
-MainWindow.xaml;Vistas\VistasBeneficiario\ABMAltaBeneficiario.xaml;Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml;Vistas\VistasBeneficiario\MenuBeneficiario.xaml;Vistas\VistasCurso\ABMAgregarAlumno.xaml;Vistas\VistasCurso\ABMAltaCurso.xaml;Vistas\VistasCurso\MenuCurso.xaml;Vistas\VistasEmpleado\ABMAltaEmpleado.xaml;Vistas\VistasEmpleado\ABMModificarEmpleado.xaml;Vistas\VistasEmpleado\MenuEmpleado.xaml;Vistas\VistasEmpresa\ABMAltaEmpresa.xaml;Vistas\VistasEmpresa\ABMModificarEmpresa.xaml;Vistas\VistasEmpresa\MenuEmpresa.xaml;Vistas\VistasEmpresa\VistaContratacion\ABMAltaContratacion.xaml;Vistas\VistasEmpresa\VistaContratacion\MenuContratacion.xaml;
+21-870464428
+32-1056334551
+MainWindow.xaml;Vistas\VistasBeneficiario\ABMAltaBeneficiario.xaml;Vistas\VistasBeneficiario\ABMBeneficiarioControl.xaml;Vistas\VistasBeneficiario\ABMModificarBeneficiario.xaml;Vistas\VistasCurso\ABMAgregarAlumno.xaml;Vistas\VistasCurso\ABMAltaCurso.xaml;Vistas\VistasCurso\ABMCursoControl.xaml;Vistas\VistasEmpleado\ABMAltaEmpleado.xaml;Vistas\VistasEmpleado\ABMEmpleadoControl.xaml;Vistas\VistasEmpleado\ABMModificarEmpleado.xaml;Vistas\VistasEmpresa\ABMAltaEmpresa.xaml;Vistas\VistasEmpresa\ABMEmpresaControl.xaml;Vistas\VistasEmpresa\ABMModificarEmpresa.xaml;Vistas\VistasEmpresa\MenuEmpresa.xaml;Vistas\VistasEmpresa\VistaContratacion\ABMAltaContratacion.xaml;Vistas\VistasEmpresa\VistaContratacion\MenuContratacion.xaml;
 
 True
 

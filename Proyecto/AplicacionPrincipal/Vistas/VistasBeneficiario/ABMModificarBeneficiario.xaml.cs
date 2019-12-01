@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AplicacionPrincipal;
 
 namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 {
@@ -23,8 +24,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
     /// </summary>
     public partial class ABMModificarBeneficiario : Window
     {
-        MenuBeneficiario abmMenuBeneficiario;
         int seleccion;
+        List<int> ides;
         Beneficiario beneficiario;
         MySqlConnection conn;
         MySqlCommand cmd;
@@ -33,14 +34,13 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
         public bool resultado;
         public bool candidato;
 
-        public ABMModificarBeneficiario()
+        public ABMModificarBeneficiario(int idSeleccionado, List<int> idesBeneficiarios)
         {
             InitializeComponent();
 
-            // Guardo el valor de la seleccion de la listbox accediendo a la ventana MenuEmpleado
-            abmMenuBeneficiario = Application.Current.Windows.OfType<MenuBeneficiario>().FirstOrDefault();
+            seleccion = idSeleccionado;
 
-            seleccion = abmMenuBeneficiario.id;
+            ides = idesBeneficiarios;
 
             MostrarDatosActuales();
 
@@ -87,7 +87,7 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
 
             selectQuery = "SELECT * FROM Beneficiario WHERE idBeneficiario = @id";
 
-            id = abmMenuBeneficiario.ides[seleccion];
+            id = ides[seleccion];
 
             cmd = new MySqlCommand(selectQuery, conn);
 

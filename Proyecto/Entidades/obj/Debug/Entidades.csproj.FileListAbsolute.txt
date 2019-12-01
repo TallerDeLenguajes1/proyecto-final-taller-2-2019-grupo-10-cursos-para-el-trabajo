@@ -52,3 +52,16 @@ F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Entidad
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Entidades\obj\Debug\Entidades.dll
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Entidades\obj\Debug\Entidades.pdb
+G:\Backup\Proyecto\Entidades\bin\Debug\Entidades.dll
+G:\Backup\Proyecto\Entidades\bin\Debug\Entidades.pdb
+G:\Backup\Proyecto\Entidades\bin\Debug\BouncyCastle.Crypto.dll
+G:\Backup\Proyecto\Entidades\bin\Debug\Google.Protobuf.dll
+G:\Backup\Proyecto\Entidades\bin\Debug\MySql.Data.dll
+G:\Backup\Proyecto\Entidades\bin\Debug\Renci.SshNet.dll
+G:\Backup\Proyecto\Entidades\bin\Debug\Google.Protobuf.xml
+G:\Backup\Proyecto\Entidades\bin\Debug\MySql.Data.xml
+G:\Backup\Proyecto\Entidades\bin\Debug\Renci.SshNet.xml
+G:\Backup\Proyecto\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+G:\Backup\Proyecto\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+G:\Backup\Proyecto\Entidades\obj\Debug\Entidades.dll
+G:\Backup\Proyecto\Entidades\obj\Debug\Entidades.pdb
