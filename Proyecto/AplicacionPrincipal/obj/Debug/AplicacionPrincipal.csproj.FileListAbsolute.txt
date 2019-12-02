@@ -235,3 +235,5 @@ G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Aplicac
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasCurso\ABMCursoControl.baml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpleado\ABMEmpleadoControl.baml
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMEmpresaControl.baml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\ABMHomeControl.g.cs
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\ABMHomeControl.baml

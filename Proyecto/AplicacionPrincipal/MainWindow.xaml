@@ -39,8 +39,17 @@
             <Button x:Name="btnPower" HorizontalAlignment="Right" VerticalAlignment="Center" Height="80" Width="80" Background="Transparent" BorderBrush="Transparent" MouseLeave="btnPower_MouseLeave" MouseEnter="btnPower_MouseEnter" Click="btnPower_Click">
                 <materialDesign:PackIcon Kind="Power" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Button>
+            <Button x:Name="btnMinimizar" Margin="0 0 80 0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="80" Width="80" Background="Transparent" BorderBrush="Transparent" MouseLeave="btnMinimizar_MouseLeave" MouseEnter="btnMinimizar_MouseEnter" Click="btnMinimizar_Click">
+                <materialDesign:PackIcon Kind="Minus" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#012e67" Panel.ZIndex="9999">
+            
+            <!--Animacion seleccion del menu-->
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                <Grid x:Name="GridCursor" Margin="0 150 0 0" Background="White" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
+            </materialDesign:TransitioningContent>
+            
             <StackPanel>
                 <Grid Height="150" Background="White">
                     <Button x:Name="btnCerrarMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnCerrarMenu_Click" Visibility="Collapsed">
@@ -51,6 +60,12 @@
                     </Button>
                 </Grid>
                 <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF1D61B2" SelectionChanged="ListViewMenu_SelectionChanged">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Home" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
+                            <TextBlock Text="HOME" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Worker" Margin="10" Width="25" Height="25" VerticalAlignment="Center"/>
