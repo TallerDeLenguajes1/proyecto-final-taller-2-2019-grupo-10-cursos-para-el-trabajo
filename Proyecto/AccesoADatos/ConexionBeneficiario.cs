@@ -319,5 +319,99 @@ namespace AccesoADatos
 
             return mensaje;
         }
+
+        public static string GetBeneficiariosCandidatos(List<Beneficiario> beneficiarios, List<int> ides)
+        {
+            Beneficiario beneficiario;
+
+            var mensaje = "Candidatos cargados";
+
+            try
+            {
+                cnn = Conexion.Conectar();
+            }
+            catch(Exception ex)
+            {
+                mensaje = ex.Message;
+
+                return mensaje;
+            }
+
+            // Obtengo los idBeneficiarios ya contratados
+            var selectQuery = "SELECT * FROM Contratacion";
+
+            cmd = new MySqlCommand(selectQuery, cnn);
+
+            try
+            {
+                dtr = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+
+                return mensaje;
+            }
+
+            var idesBeneficiariosYaContratados = new List<int>();
+
+            while (dtr.Read())
+            {
+                if (!dtr.IsDBNull(0))
+                {
+                    idesBeneficiariosYaContratados.Add(dtr.GetInt32(0));
+                }              
+            }
+            
+            dtr.Close();
+
+            selectQuery = "SELECT * FROM Beneficiario WHERE Candidato = 1";
+            
+            cmd = new MySqlCommand(selectQuery, cnn);
+            try
+            {
+                dtr = cmd.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                mensaje = ex.Message;
+                
+                return mensaje;
+            }
+
+            while (dtr.Read())
+            {
+                beneficiario = new Beneficiario();
+
+                ides.Add(Convert.ToInt32(dtr.GetString(0)));
+
+                beneficiario.Nombre = dtr.GetString(1);
+
+                beneficiario.Apellido = dtr.GetString(2);
+
+                beneficiario.DNI = dtr.GetString(3);
+
+                beneficiario.Cuil = dtr.GetString(4);
+
+                beneficiario.Email = dtr.GetString(5);
+
+                beneficiario.NivelDeEscolaridad = dtr.GetString(6);
+
+                if (dtr.GetInt16(7) == 1)
+                {
+                    beneficiario.Candidato = true;
+                }
+                else
+                {
+                    beneficiario.Candidato = false;
+                }
+
+                beneficiarios.Add(beneficiario);
+            }
+
+            cnn = Conexion.Desconectar();
+            
+            return mensaje;
+        }
     }
 }

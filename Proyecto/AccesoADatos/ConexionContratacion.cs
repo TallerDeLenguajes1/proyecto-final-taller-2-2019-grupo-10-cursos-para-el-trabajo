@@ -26,7 +26,7 @@ namespace AccesoADatos
         /// <param name="sueldo"></param>
         /// <param name="cargo"></param>
         /// <returns></returns>
-        public static string AgregarContratacion(MySqlConnection conexionDB, int idBeneficiario, int idEmpresa, decimal sueldo, string cargo)
+        public static string AgregarContratacion(MySqlConnection conexionDB, int idBeneficiario, int idEmpresa, Contratacion contratacion)
         {
             string mensaje = "Agregado a la BD";
             string insertQuery;
@@ -41,9 +41,9 @@ namespace AccesoADatos
 
                 cmd.Parameters.AddWithValue("@idEmpresa", idEmpresa);
 
-                cmd.Parameters.AddWithValue("@Cargo", cargo);
+                cmd.Parameters.AddWithValue("@Cargo", contratacion.Cargo);
 
-                cmd.Parameters.AddWithValue("@Sueldo", sueldo);
+                cmd.Parameters.AddWithValue("@Sueldo", contratacion.Sueldo);
 
                 try
                 {
@@ -115,7 +115,7 @@ namespace AccesoADatos
         /// <param name="cargo"></param>
         /// <param name="sueldo"></param>
         /// <returns></returns>
-        public static string ModificarContratacion(MySqlConnection conexionDB, int idBeneficiario, string cargo, decimal sueldo)
+        public static string ModificarContratacion(MySqlConnection conexionDB, int idBeneficiario, Contratacion contratacion)
         {
             string mensaje = "Modificado de la BD correctamente";
 
@@ -127,9 +127,9 @@ namespace AccesoADatos
 
                 cmd.Parameters.AddWithValue("@idBeneficiario", idBeneficiario);
 
-                cmd.Parameters.AddWithValue("@Cargo", cargo);
+                cmd.Parameters.AddWithValue("@Cargo", contratacion.Cargo);
 
-                cmd.Parameters.AddWithValue("@Sueldo", sueldo);
+                cmd.Parameters.AddWithValue("@Sueldo", contratacion.Sueldo);
 
                 try
                 {
@@ -210,6 +210,154 @@ namespace AccesoADatos
             cnn = Conexion.Desconectar();
 
             return mensaje;
+        }
+
+
+        /// <summary>
+        /// Revisa el id para saber si ya se encuentra contratado
+        /// </summary>
+        /// <param name="idBeneficiario"></param>
+        /// <returns>Devuelve true si ya se encuentra contratado</returns>
+        public static bool RevisarSiYaEstaContratado(int idBeneficiario)
+        {
+            bool resultado = false;
+
+            try
+            {
+                cnn = Conexion.Conectar();
+            }
+            catch (Exception)
+            {
+
+            }
+
+            var selectQuery = "SELECT idBeneficiario FROM Contratacion";
+
+            cmd = new MySqlCommand(selectQuery, cnn);
+
+            try
+            {
+                dtr = cmd.ExecuteReader();
+            }
+            catch (Exception)
+            {
+
+            }
+
+            while (dtr.Read())
+            {
+                if (dtr.GetInt32(0) == idBeneficiario)
+                {
+                    resultado = true;
+                }
+            }
+
+            return resultado;
+        }
+
+
+
+        /// <summary>
+        /// Obtiene los contratados de una empresa en especifico
+        /// </summary>
+        /// <param name="idEmpresa"></param>
+        /// <param name="contratados"></param>
+        /// <param name="contratos"></param>
+        public static void GetEmpresaSeleccionada(int idEmpresa, List<Beneficiario> contratados, List<Contratacion> contratos)
+        {
+            var idesBeneficiariosContratados = new List<int>();
+
+            Beneficiario beneficiario;
+
+            Contratacion contrato;
+
+            var selectQuery = "SELECT * FROM Contratacion WHERE idEmpresa = @idEmpresa";
+
+            try
+            {
+                cnn = Conexion.Conectar();
+            }
+            catch (Exception)
+            {
+
+            }
+
+            cmd = new MySqlCommand(selectQuery, cnn);
+
+            cmd.Parameters.AddWithValue("@idEmpresa", idEmpresa);
+
+            try
+            {
+                dtr = cmd.ExecuteReader();
+            }
+            catch (Exception)
+            {
+                
+            }
+
+            while (dtr.Read())
+            {
+                idesBeneficiariosContratados.Add(dtr.GetInt32(0));
+
+                contrato = new Contratacion();
+
+                contrato.Cargo = dtr.GetString(2);
+
+                contrato.Sueldo = dtr.GetDecimal(3);
+
+                contratos.Add(contrato);
+            }
+
+            dtr.Close();
+
+            foreach (var idBeneficiarioContratado in idesBeneficiariosContratados)
+            {
+                selectQuery = "SELECT * FROM Beneficiario WHERE idBeneficiario = @idBeneficiario";
+
+                cmd = new MySqlCommand(selectQuery, cnn);
+
+                cmd.Parameters.AddWithValue("@idBeneficiario", idBeneficiarioContratado);
+
+                try
+                {
+                    dtr = cmd.ExecuteReader();
+                }
+                catch (Exception)
+                {
+
+                }
+
+                while (dtr.Read())
+                {
+                    beneficiario = new Beneficiario();
+
+                    beneficiario.Nombre = dtr.GetString(1);
+
+                    beneficiario.Apellido = dtr.GetString(2);
+
+                    beneficiario.DNI = dtr.GetString(3);
+
+                    beneficiario.Cuil = dtr.GetString(4);
+
+                    beneficiario.Email = dtr.GetString(5);
+
+                    beneficiario.NivelDeEscolaridad = dtr.GetString(6);
+
+                    if (dtr.GetInt16(7) == 1)
+                    {
+                        beneficiario.Candidato = true;
+                    }
+                    else
+                    {
+                        beneficiario.Candidato = false;
+                    }
+
+                    contratados.Add(beneficiario);
+                }
+
+                dtr.Close();
+            }
+
         }
 
     }

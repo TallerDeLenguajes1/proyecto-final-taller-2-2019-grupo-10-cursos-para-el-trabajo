@@ -26,5 +26,8 @@
         <Label x:Name="lblListaCandidatos" Content="Candidatos" Height="55" Margin="282,10,0,0" VerticalAlignment="Top" Width="500" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#012e67"/>
         <Button x:Name="btnAceptar" Content="CONTRATAR" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="194,293,398,10" Grid.Row="1" Click="BtnAceptar_Click" Height="Auto"/>
         <Button x:Name="btnCancelar" Content="VOLVER" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="MaterialDesignFlatButton" Margin="398,293,194,10" Grid.Row="1" Click="BtnCancelar_Click" Height="Auto"/>
+        <TextBox x:Name="txtCargo" materialDesign:HintAssist.Hint="Cargo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txtCargo_TextChanged" Margin="10,10,552,265" Grid.Row="1"/>
+        <Slider x:Name="sldSueldo" Minimum="0" Maximum="100000" Style="{StaticResource MaterialDesignDiscreteSlider}" ToolTip="MaterialDesignDiscreteSlider" Value="{Binding Text, ElementName=txbSueldo}" Margin="102,102,510,165" Grid.Row="1" />
+        <TextBox x:Name="txbSueldo" materialDesign:HintAssist.Hint="Sueldo" Margin="10,79,690,191" Grid.Row="1" PreviewTextInput="txbSueldo_PreviewTextInput" Text="{Binding Value, ElementName=sldSueldo}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
     </Grid>
 </Window>

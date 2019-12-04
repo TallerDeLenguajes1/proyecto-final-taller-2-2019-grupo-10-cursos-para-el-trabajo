@@ -8,6 +8,6 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="530" d:DesignWidth="1018">
     <Grid>
-        <TextBlock Foreground="#FF1D61B2" FontSize="100" FontFamily="Roboto" Margin="0 70 0 0"><Run Text="     "/><Run Text="Bienvenido"/><LineBreak/><Run Text="                 Al"/><LineBreak/><Run Text="    "/><Run Text=" "/><Run Text="             Sistema"/></TextBlock>
+        <TextBlock Foreground="#FF1D61B2" FontSize="100" FontFamily="Roboto" Margin="265 70 0 0"><Run Text="Bienvenido"/><LineBreak/><Run Text="       Al"/><LineBreak/><Run Text="   Sistema"/></TextBlock>
     </Grid>
 </UserControl>

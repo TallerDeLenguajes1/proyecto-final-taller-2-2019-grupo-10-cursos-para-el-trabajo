@@ -13,62 +13,40 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MenuContratacion" Height="450" Width="800">
+        Title="MenuContratacion" Height="530" Width="1018">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="241*"/>
-            <ColumnDefinition Width="105*"/>
-            <ColumnDefinition Width="354*"/>
-            <ColumnDefinition Width="93*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="164*"/>
-            <RowDefinition Height="92*"/>
-            <RowDefinition Height="57*"/>
-            <RowDefinition Height="26*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0" Background="#012e67" Grid.ColumnSpan="4">
-            <Label Name="lblTitulo" Content="Nombre de la empresa" Height="60" VerticalAlignment="Center" Width="380" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White"/>
-        </Border>
-        <ListBox Name="lbxContratados" HorizontalAlignment="Left" Height="249" Margin="22,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="511" Background="#bbdefb" SelectionChanged="LbxContratados_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3"/>
-        <Label x:Name="lblListaContratados" Content="Contratados" Height="55" Margin="22,10,0,0" VerticalAlignment="Top" Width="511" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Grid.Row="1" Background="#012e67" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <Button Name="btnAltaContratacion"
-            Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-            ToolTip="MaterialDesignFloatingActionAccentButton" Margin="30,2,23.5,3" Grid.Row="3" Height="Auto" Width="Auto" Click="BtnAltaContratacion_Click" Grid.Column="1">
-            <materialDesign:PackIcon
-                Kind="Add"
-                Height="30"
-                Width="30" />
-        </Button>
-        <Button x:Name="btnModificarContrato"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Grid.Row="1" Height="Auto" Margin="32,10,28,6" Click="BtnModificarContrato_Click">
-            <materialDesign:PackIcon
-                Kind="FileDocumentEdit"
-                Height="80"
-                Width="80" />
-        </Button>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Modificar" Foreground="White" TextAlignment="Center" Margin="72,121,69,14" FontSize="20"/>
-        <Button x:Name="btnTerminarContrato"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ShadowAssist.ShadowDepth="Depth2"
-            ToolTip="Resource name: MaterialDesignRaisedButton" Grid.Row="2" Height="Auto" Margin="32,2,28,25" Click="BtnTerminarContrato_Click" Grid.RowSpan="3">
-            <materialDesign:PackIcon
-                Kind="UserOffOutline"
-                Height="100"
-                Width="100" />
-        </Button>
-        <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="Contrato" Foreground="White" TextAlignment="Center" Margin="76,26,75,3" FontSize="20"/>
-        <Button x:Name="btnSalir"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            ToolTip="MaterialDesignFloatingActionAccentButton" Margin="11,0,0,10" Height="Auto" Click="BtnSalir_Click" Grid.Column="3">
-            <materialDesign:PackIcon
-                Kind="Reply"
-                Height="42"
-                Width="42" />
-        </Button>
-        <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="Finalizar" Foreground="White" TextAlignment="Center" Margin="82,10,69,54" FontSize="20"/>
+        <Grid x:Name="GridListBox" HorizontalAlignment="Right" Width="500">
+            <Grid x:Name="GridTituloListBox" VerticalAlignment="Top" Height="70" Margin="10">
+                <Label x:Name="lblListaContratacion" Content="Nombre de la Empresa" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Background="#012e67"/>
+            </Grid>
+            <Grid x:Name="Gridlbx" VerticalAlignment="Bottom" Height="420">
+                <ListBox Name="lbxContrataciones" Background="#bbdefb" Margin="10 0 10 10" ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionChanged="LbxContratados_SelectionChanged"/>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Height="80" Margin="10">
+                <Button x:Name="btnAltaContratacion" Style="{StaticResource MaterialDesignFloatingActionAccentButton}" ToolTip="MaterialDesignFloatingActionAccentButton" Click="btnAltaContratacion_Click">
+                    <materialDesign:PackIcon Kind="Add" Height="50" Width="50"/>
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid x:Name="GridBtns" HorizontalAlignment="Left" Width="500">
+            <Grid VerticalAlignment="Top" Height="150" Margin="10">
+                <Button VerticalAlignment="Top" Height="100" x:Name="btnModificarContrato" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="btnModificarContrato_Click">
+                    <materialDesign:PackIcon Kind="FileDocumentEdit" Height="80" Width="80"/>
+                </Button>
+                <TextBlock Text="Modificar Contrato" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 15" FontSize="22" Foreground="#FF1D61B2"/>
+            </Grid>
+            <Grid VerticalAlignment="Center" Height="150" Margin="10">
+                <Button VerticalAlignment="Top" Height="100" x:Name="btnEliminarContrato" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="btnEliminarContrato_Click">
+                    <materialDesign:PackIcon Kind="UserOffOutline" Height="80" Width="80"/>
+                </Button>
+                <TextBlock Text="Finalizar Contrato" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 15" FontSize="22" Foreground="#FF1D61B2"/>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" Height="150" Margin="10">
+                <Button VerticalAlignment="Top" Height="100" x:Name="btnGenerarReporte" Style="{StaticResource MaterialDesignRaisedAccentButton}" ToolTip="Resource name: MaterialDesignRaisedAccentButton" Click="btnGenerarReporte_Click">
+                    <materialDesign:PackIcon Kind="FileReport" Height="80" Width="80"/>
+                </Button>
+                <TextBlock Text="Generar Reporte" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 15" FontSize="22" Foreground="#FF1D61B2"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

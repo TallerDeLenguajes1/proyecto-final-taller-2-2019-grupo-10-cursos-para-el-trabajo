@@ -124,9 +124,6 @@
     <Compile Include="Vistas\VistasEmpresa\ABMModificarEmpresa.xaml.cs">
       <DependentUpon>ABMModificarEmpresa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\VistasEmpresa\MenuEmpresa.xaml.cs">
-      <DependentUpon>MenuEmpresa.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\VistasEmpresa\VistaContratacion\ABMAltaContratacion.xaml.cs">
       <DependentUpon>ABMAltaContratacion.xaml</DependentUpon>
     </Compile>
@@ -194,10 +191,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasEmpresa\ABMModificarEmpresa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vistas\VistasEmpresa\MenuEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

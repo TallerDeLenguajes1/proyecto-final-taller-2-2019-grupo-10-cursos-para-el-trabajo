@@ -34,6 +34,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
         {
             InitializeComponent();
 
+            ConexionBeneficiario.ActualizarCandidatos();
+
             cursos = new List<Curso>();
             ides = new List<int>();
 

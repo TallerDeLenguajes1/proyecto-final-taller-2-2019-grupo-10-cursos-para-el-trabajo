@@ -98,6 +98,10 @@ namespace PopUpMenu
         }
 
 
+        /// <summary>
+        /// Mueve el grid de seleccion al indice seleccionado
+        /// </summary>
+        /// <param name="index"></param>
         private void MoveCursorMenu(int index)
         {
             TrainsitionigContentSlide.OnApplyTemplate();

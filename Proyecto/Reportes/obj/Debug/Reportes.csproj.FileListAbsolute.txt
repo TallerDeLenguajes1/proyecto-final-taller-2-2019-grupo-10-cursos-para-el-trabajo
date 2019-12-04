@@ -8,3 +8,14 @@ G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reporte
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csproj.CopyComplete
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.dll
 G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.pdb
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Reportes.dll
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Reportes.pdb
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Entidades.dll
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\EPPlus.dll
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\Entidades.pdb
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\bin\Debug\EPPlus.xml
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csprojAssemblyReference.cache
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csproj.CoreCompileInputs.cache
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.csproj.CopyComplete
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.dll
+F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Reportes\obj\Debug\Reportes.pdb

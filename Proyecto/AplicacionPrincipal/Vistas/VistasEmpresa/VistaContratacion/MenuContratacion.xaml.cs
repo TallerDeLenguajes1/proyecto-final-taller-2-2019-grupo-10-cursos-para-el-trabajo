@@ -1,6 +1,7 @@
 ﻿using AccesoADatos;
 using Entidades;
 using MySql.Data.MySqlClient;
+using Reportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,21 +26,23 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
         Empresa empresa;
         int idEmpresa;
         List<Contratacion> contrataciones;
-        List<int> idesEmpresas;
-        List<int> idesBeneficiariosContrataciones;
+        List<Beneficiario> benefContratados;
         List<int> idesBeneficiarios;
         List<Beneficiario> beneficiarios;
         MySqlConnection conn;
+        string mensaje;
 
         public MenuContratacion(Empresa empresaSeleccionada, int idEmpresaSeleccionada)
         {
             InitializeComponent();
 
+            ConexionBeneficiario.ActualizarCandidatos();
+
             empresa = empresaSeleccionada;
 
             idEmpresa = idEmpresaSeleccionada;
 
-            lblTitulo.Content = empresa.Nombre;
+            lblListaContratacion.Content = empresa.Nombre;
 
             try
             {
@@ -57,6 +60,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
             ConexionBeneficiario.GetBeneficiario(beneficiarios, idesBeneficiarios);
 
             conn = Conexion.Desconectar();
+
+            ActualizarListbox();
         }
 
         /// <summary>
@@ -64,40 +69,27 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
         /// </summary>
         public void ActualizarListbox()
         {
-            lbxContratados.Items.Clear();
+            lbxContrataciones.Items.Clear();
 
             contrataciones = new List<Contratacion>();
 
-            idesEmpresas = new List<int>();
+            benefContratados = new List<Beneficiario>();
 
-            idesBeneficiariosContrataciones = new List<int>();
-
-            ConexionContratacion.GetContrataciones(contrataciones, idesBeneficiariosContrataciones, idesEmpresas);
+            ConexionContratacion.GetEmpresaSeleccionada(idEmpresa, benefContratados, contrataciones);
 
             var i = 0;
-            var j = 0;
 
-            foreach (var id in idesEmpresas)
+            foreach (var contrato in benefContratados)
             {
-                if (id == idEmpresa)
-                {
-                    foreach (var idBeneficiario in idesBeneficiarios)
-                    {
-                        if (idBeneficiario == idesBeneficiariosContrataciones[i])
-                        {
-                            lbxContratados.Items.Add(beneficiarios[j].Apellido + ", " + beneficiarios[j].Nombre + " - " + contrataciones[i]);
-                        }
+                lbxContrataciones.Items.Add(contrato.Apellido + ", " + contrato.Nombre + " - " + contrataciones[i]);
 
-                        j++;
-                    }
-                }
                 i++;
             }
         }
 
         private void LbxContratados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (lbxContratados.SelectedIndex != -1)
+            if (lbxContrataciones.SelectedIndex != -1)
             {
                 btnAltaContratacion.IsEnabled = true;
 
@@ -105,26 +97,50 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
             }
         }
 
-        private void BtnAltaContratacion_Click(object sender, RoutedEventArgs e)
-        {
-            ABMAltaContratacion frmABMAltaContratacion = new ABMAltaContratacion();
-
-            frmABMAltaContratacion.ShowDialog();
-        }
-
-        private void BtnModificarContrato_Click(object sender, RoutedEventArgs e)
+        private void btnModificarContrato_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BtnTerminarContrato_Click(object sender, RoutedEventArgs e)
+        private void btnEliminarContrato_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
-        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        private void btnGenerarReporte_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            mensaje = Generar.Contrataciones(empresa.Nombre, benefContratados, contrataciones);
+
+            MessageBox.Show(mensaje);
+        }
+
+        private void btnAltaContratacion_Click(object sender, RoutedEventArgs e)
+        {
+            ABMAltaContratacion frmABMaltaContratacion = new ABMAltaContratacion();
+
+            frmABMaltaContratacion.ShowDialog();
+
+            if (frmABMaltaContratacion.aceptar)
+            {
+                try
+                {
+                    conn = Conexion.Conectar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                var contratacion = frmABMaltaContratacion.GetContratacion();
+
+                var idBenef = frmABMaltaContratacion.idesBeneficiarios[frmABMaltaContratacion.lbxCandidatos.SelectedIndex];
+
+                mensaje = ConexionContratacion.AgregarContratacion(conn, idBenef, idEmpresa, contratacion);
+
+                MessageBox.Show(mensaje);
+            }
+
+            ActualizarListbox();
         }
     }
 }

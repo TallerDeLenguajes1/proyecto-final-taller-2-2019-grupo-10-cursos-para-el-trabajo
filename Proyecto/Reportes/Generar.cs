@@ -21,7 +21,7 @@ namespace Reportes
         public static string Beneficiarios(List<Beneficiario> beneficiarios, List<int> ides)
         {
             ExcelPackage ExcelPkg = new ExcelPackage();
-            ExcelWorksheet wsSheet1 = ExcelPkg.Workbook.Worksheets.Add("Sheet1");
+            ExcelWorksheet wsSheet1 = ExcelPkg.Workbook.Worksheets.Add("Hoja1");
 
             // wsSheet1.Cells.Style.Font.Name = "Montserrat";
             wsSheet1.Cells.Style.Font.Name = "Roboto";
@@ -32,7 +32,7 @@ namespace Reportes
 
                 Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
-                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(33, 150, 243));
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
 
                 Rng.Merge = true;
 
@@ -44,8 +44,8 @@ namespace Reportes
             using (ExcelRange Rng = wsSheet1.Cells["B4:I" + (ides.Count + 4)])
             {
                 // Acceso indirecto a la clase ExcelTableCollection
-                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblSalesman");
-                //table.Name = "tblSalesman";
+                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblBeneficiario");
+                //table.Name = "tblBeneficiario";
 
                 // Establecer posicion y nombre de columnas
                 table.Columns[0].Name = "ID";
@@ -71,8 +71,9 @@ namespace Reportes
                 // [ID] Columna
                 using (ExcelRange Rng = wsSheet1.Cells["B" + i++]) { Rng.Value = id; }
 
-                // [APELLIDO] Columna
                 i--;
+
+                // [APELLIDO] Columna                
                 using (ExcelRange Rng = wsSheet1.Cells["C" + i]) { Rng.Value = beneficiarios[indiceBen].Apellido; }
 
                 // [NOMBRE] Columna
@@ -134,7 +135,7 @@ namespace Reportes
 
                 Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
-                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(33, 150, 243));
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
 
                 Rng.Merge = true;
 
@@ -200,7 +201,7 @@ namespace Reportes
 
                 Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
-                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(33, 150, 243));
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
 
                 Rng.Merge = true;
 
@@ -285,7 +286,7 @@ namespace Reportes
 
                 Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
-                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(33, 150, 243));
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
 
                 Rng.Merge = true;
 
@@ -298,7 +299,7 @@ namespace Reportes
             using (ExcelRange Rng = wsSheet1.Cells["B4:F" + (idesCursos.Count + 4)])
             {
                 // Acceso indirecto a la clase ExcelTableCollection
-                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblSalesman");
+                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblCursos");
                 //table.Name = "tblSalesman";
 
                 // Establecer posicion y nombre de columnas
@@ -341,6 +342,76 @@ namespace Reportes
 
             wsSheet1.Cells[wsSheet1.Dimension.Address].AutoFitColumns();
             ExcelPkg.SaveAs(new FileInfo(@"InformeCursos.xlsx"));
+
+            return "Informe Creado";
+        }
+
+
+
+        public static string Contrataciones(string nombreEmpresa, List<Beneficiario> beneficiarios, List<Contratacion> contrataciones)
+        {
+            ExcelPackage ExcelPkg = new ExcelPackage();
+            //Crea la hoja1
+            ExcelWorksheet wsSheet1 = ExcelPkg.Workbook.Worksheets.Add("Hoja1");
+
+            // wsSheet1.Cells.Style.Font.Name = "Montserrat";
+            // FontFamily del archivo
+            wsSheet1.Cells.Style.Font.Name = "Roboto";
+
+            // Titulo
+            using (ExcelRange Rng = wsSheet1.Cells["B2:D2"])
+            {
+                Rng.Value = "Contratos de: " + nombreEmpresa;
+
+                Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+
+                Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
+
+                Rng.Merge = true;
+
+                Rng.Style.Font.Size = 16;
+
+                Rng.Style.Font.Bold = true;
+            }
+
+            // Creo la tabla
+            using (ExcelRange Rng = wsSheet1.Cells["B4:D" + (beneficiarios.Count + 4)])
+            {
+                // Acceso indirecto a la clase ExcelTableCollection
+                ExcelTable table = wsSheet1.Tables.Add(Rng, "tblContratos");
+                //table.Name = "tblSalesman";
+
+                // Establecer posicion y nombre de columnas
+                table.Columns[0].Name = "Beneficiario";
+                table.Columns[1].Name = "Cargo";
+                table.Columns[2].Name = "Sueldo";
+
+                //table.ShowHeader = false;
+                table.ShowFilter = true;
+                //table.ShowTotal = true;
+            }
+
+            // Insertar datos en las celdas de la tabla de Excel
+            var i = 5;
+            var indiceCon = 0;
+
+            foreach (var beneficiario in beneficiarios)
+            {                
+                // [BENEFICIARIO] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["B" + i]) { Rng.Value = beneficiario.Apellido + ", " + beneficiario.Nombre; }
+
+                // [CARGO] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["C" + i]) { Rng.Value = contrataciones[indiceCon].Cargo; }
+
+                // [SUELDO] Columna
+                using (ExcelRange Rng = wsSheet1.Cells["D" + i]) { Rng.Value = "$" + contrataciones[indiceCon].Sueldo.ToString(); }
+
+                i++;
+                indiceCon++;
+            }
+
+            wsSheet1.Cells[wsSheet1.Dimension.Address].AutoFitColumns();
+            ExcelPkg.SaveAs(new FileInfo(@"InformeContratos-" + nombreEmpresa + ".xlsx"));
 
             return "Informe Creado";
         }

@@ -99,6 +99,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
                 conn = Conexion.Desconectar();
             }
 
+            lbxEmpresas.SelectedIndex = -1;
             btnEliminarEmpresa.IsEnabled = false;
             btnModificarEmpresa.IsEnabled = false;
             btnContrataciones.IsEnabled = false;
@@ -133,6 +134,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
                 conn = Conexion.Desconectar();
             }
 
+            lbxEmpresas.SelectedIndex = -1;
             btnEliminarEmpresa.IsEnabled = false;
             btnModificarEmpresa.IsEnabled = false;
             btnContrataciones.IsEnabled = false;
@@ -161,6 +163,7 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
 
             ActualizarListbox();
 
+            lbxEmpresas.SelectedIndex = -1;
             btnEliminarEmpresa.IsEnabled = false;
             btnModificarEmpresa.IsEnabled = false;
             btnContrataciones.IsEnabled = false;
