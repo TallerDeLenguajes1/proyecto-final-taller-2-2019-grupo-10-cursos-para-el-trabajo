@@ -24,6 +24,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
     /// </summary>
     public partial class ABMCursoControl : UserControl
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         List<Curso> cursos;
         MySqlConnection conn;
         string mensaje;
@@ -96,6 +98,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Alta curso conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 

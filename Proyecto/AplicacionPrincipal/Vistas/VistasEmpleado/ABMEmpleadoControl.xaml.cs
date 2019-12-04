@@ -24,6 +24,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
     /// </summary>
     public partial class ABMEmpleadoControl : UserControl
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         List<Instructor> instructores;
         List<Tutor> tutores;
         MySqlConnection conn;
@@ -104,6 +106,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Alta empleado conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
@@ -154,6 +158,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Modificar empleado conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
@@ -186,6 +192,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Eliminar empleado conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 

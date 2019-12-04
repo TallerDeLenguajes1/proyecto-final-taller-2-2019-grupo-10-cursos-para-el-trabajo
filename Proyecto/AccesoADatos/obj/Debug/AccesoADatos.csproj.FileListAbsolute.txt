@@ -59,3 +59,6 @@ G:\Nueva carpeta (2)\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.csprojAssembly
 G:\Nueva carpeta (2)\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.csproj.CopyComplete
 G:\Nueva carpeta (2)\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.dll
 G:\Nueva carpeta (2)\Proyecto\AccesoADatos\obj\Debug\AccesoADatos.pdb
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\NLog.config
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\NLog.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AccesoADatos\bin\Debug\NLog.xml

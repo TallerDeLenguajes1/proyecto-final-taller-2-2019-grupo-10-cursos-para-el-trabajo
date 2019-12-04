@@ -24,6 +24,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
     /// </summary>
     public partial class ABMBeneficiarioControl : UserControl
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         List<Beneficiario> beneficiarios;
         MySqlConnection conn;
         string mensaje;
@@ -85,6 +87,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Modificar beneficiario conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
@@ -110,6 +114,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Eliminar beneficiario conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 
@@ -157,6 +163,8 @@ namespace AplicacionPrincipal.Vistas.VistasBeneficiario
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Agregar beneficiario conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 

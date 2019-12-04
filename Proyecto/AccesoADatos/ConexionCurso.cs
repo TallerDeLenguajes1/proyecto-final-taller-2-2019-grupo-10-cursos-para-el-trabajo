@@ -11,6 +11,8 @@ namespace AccesoADatos
 {
     public class ConexionCurso
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         private static MySqlCommand cmd;
         private static MySqlConnection cnn;
         private static MySqlDataReader dtr;
@@ -44,6 +46,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Agregar tema curso");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -92,6 +96,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Agregar empleados al curso");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -155,6 +161,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Agregar alumno al curso");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -174,14 +182,11 @@ namespace AccesoADatos
             int idCurso = 0;
             try
             {
-                cnn = new MySqlConnection();
-
                 cnn = Conexion.Conectar();
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Logger.Error(ex, "Obtener idCurso conexion");
             }
 
             string selectQuery;
@@ -233,6 +238,8 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Obtener cursos conexion");
+
                 mensaje = "Error " + ex.Message;
 
                 return mensaje;
@@ -456,13 +463,12 @@ namespace AccesoADatos
 
             try
             {
-                cnn = new MySqlConnection();
-
                 cnn = Conexion.Conectar();
-
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Obtener cursos conexion");
+
                 mensaje = "Error " + ex.Message;
 
                 return mensaje;

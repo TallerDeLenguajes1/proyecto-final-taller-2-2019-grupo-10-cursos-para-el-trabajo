@@ -22,6 +22,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
     /// </summary>
     public partial class ABMModificarEmpresa : Window
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         int seleccion;
         List<int> idesEmpresas;
         Empresa empresa;
@@ -69,6 +71,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Mostar datos de empresa conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 

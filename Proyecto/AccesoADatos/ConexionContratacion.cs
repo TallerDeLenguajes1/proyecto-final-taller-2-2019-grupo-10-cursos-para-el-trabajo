@@ -12,6 +12,8 @@ namespace AccesoADatos
 {
     public class ConexionContratacion
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         static MySqlCommand cmd;
         static MySqlDataReader dtr;
         static MySqlConnection cnn;
@@ -51,6 +53,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Agregar contratacion command");
+
                     mensaje = ex.Message;
 
                     return mensaje;
@@ -91,6 +95,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Eliminar contratacion command");
+
                     mensaje = ex.Message;
 
                     return mensaje;
@@ -137,6 +143,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Modificar contratacion command");
+
                     mensaje = ex.Message;
 
                     return mensaje;
@@ -172,6 +180,8 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Obtener contrataciones conexion");
+
                 mensaje = ex.Message;
 
                 return mensaje;
@@ -226,9 +236,9 @@ namespace AccesoADatos
             {
                 cnn = Conexion.Conectar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Logger.Error(ex, "Revisar contratos conexion");
             }
 
             var selectQuery = "SELECT idBeneficiario FROM Contratacion";
@@ -277,9 +287,9 @@ namespace AccesoADatos
             {
                 cnn = Conexion.Conectar();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Logger.Error(ex, "Obtener contratos de una empresa conexion");
             }
 
             cmd = new MySqlCommand(selectQuery, cnn);
@@ -290,9 +300,9 @@ namespace AccesoADatos
             {
                 dtr = cmd.ExecuteReader();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                Logger.Error(ex, "Obtener contratos de una empresa dtr");
             }
 
             while (dtr.Read())
@@ -322,9 +332,9 @@ namespace AccesoADatos
                 {
                     dtr = cmd.ExecuteReader();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    Logger.Error(ex, "Obtener contratos de una empresa dtr2");
                 }
 
                 while (dtr.Read())

@@ -23,6 +23,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
     /// </summary>
     public partial class MenuContratacion : Window
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         Empresa empresa;
         int idEmpresa;
         List<Contratacion> contrataciones;
@@ -50,6 +52,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Obtener beneficiarios para contratacion conexion");
+
                 MessageBox.Show(ex.Message);
             }
 
@@ -128,6 +132,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa.VistaContratacion
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Alta contratacion conexion");
+
                     MessageBox.Show(ex.Message);
                 }
 

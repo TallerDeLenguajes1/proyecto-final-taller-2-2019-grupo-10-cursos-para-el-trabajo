@@ -23,6 +23,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
     /// </summary>
     public partial class ABMModificarEmpleado : Window
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         int seleccion;
         List<int> idesInstructores;
         List<int> idesTutores;
@@ -96,6 +98,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpleado
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Mostrar datos empleados conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 

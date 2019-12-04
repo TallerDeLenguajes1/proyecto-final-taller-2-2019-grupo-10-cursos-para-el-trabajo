@@ -24,6 +24,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
     /// </summary>
     public partial class ABMEmpresaControl : UserControl
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         List<Empresa> empresas;
         MySqlConnection conn;
         string mensaje;
@@ -87,6 +89,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Alta empresa conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
@@ -122,6 +126,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Modificar empresa conexion");
+
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
@@ -152,6 +158,8 @@ namespace AplicacionPrincipal.Vistas.VistasEmpresa
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Eliminar empresa conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 

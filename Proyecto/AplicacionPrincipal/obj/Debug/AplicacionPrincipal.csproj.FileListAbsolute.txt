@@ -241,3 +241,7 @@ F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\Aplicac
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasCurso\ABMCursoControl.baml
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpleado\ABMEmpleadoControl.baml
 F:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\Vistas\VistasEmpresa\ABMEmpresaControl.baml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\NLog.config
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\NLog.dll
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\bin\Debug\NLog.xml
+G:\proyecto-final-taller-2-2019-grupo-10-cursos-para-el-trabajo\Proyecto\AplicacionPrincipal\obj\Debug\AplicacionPrincipal_Content.g.cs

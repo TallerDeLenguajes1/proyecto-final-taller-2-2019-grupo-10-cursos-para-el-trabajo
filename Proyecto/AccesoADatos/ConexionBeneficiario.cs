@@ -12,6 +12,8 @@ namespace AccesoADatos
 {
     public class ConexionBeneficiario
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         private static MySqlConnection cnn;
         private static MySqlCommand cmd;
         private static MySqlDataReader dtr;
@@ -65,6 +67,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Agregar beneficiario");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -108,6 +112,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Eliminar beneficiario comando");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -173,6 +179,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
+                    Logger.Error(ex, "Modificar beneficiario");
+
                     mensaje = "Error: " + ex.Message;
 
                     return mensaje;
@@ -251,6 +259,8 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Obtener beneficiarios");
+
                 mensaje = "Error " + ex.Message;
 
                 return mensaje;
@@ -274,14 +284,22 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Actualizar candidatos conexion");
+
                 mensaje = ex.Message;
             }
 
             selectQuery = "SELECT idBeneficiario FROM CursoBeneficiario";
 
             cmd = new MySqlCommand(selectQuery, cnn);
-
-            dtr = cmd.ExecuteReader();
+            try
+            {
+                dtr = cmd.ExecuteReader();
+            }
+            catch(Exception ex)
+            {
+                Logger.Error(ex, "Actualizar candidatos dtr");
+            }            
 
             while (dtr.Read())
             {
@@ -332,6 +350,8 @@ namespace AccesoADatos
             }
             catch(Exception ex)
             {
+                Logger.Error(ex, "Obtener beneficiarios candidatos conexion");
+
                 mensaje = ex.Message;
 
                 return mensaje;
@@ -348,6 +368,8 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "DataReader candidatos");
+
                 mensaje = ex.Message;
 
                 return mensaje;
@@ -374,6 +396,8 @@ namespace AccesoADatos
             }
             catch(Exception ex)
             {
+                Logger.Error(ex, "DataReader2 candidatos conexion");
+
                 mensaje = ex.Message;
                 
                 return mensaje;

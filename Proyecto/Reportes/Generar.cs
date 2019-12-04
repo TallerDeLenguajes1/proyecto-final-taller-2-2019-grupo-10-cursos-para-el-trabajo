@@ -359,11 +359,9 @@ namespace Reportes
             wsSheet1.Cells.Style.Font.Name = "Roboto";
 
             // Titulo
-            using (ExcelRange Rng = wsSheet1.Cells["B2:D2"])
+            using (ExcelRange Rng = wsSheet1.Cells["B2:I2"])
             {
                 Rng.Value = "Contratos de: " + nombreEmpresa;
-
-                Rng.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
                 Rng.Style.Font.Color.SetColor(System.Drawing.Color.FromArgb(1, 46, 103));
 

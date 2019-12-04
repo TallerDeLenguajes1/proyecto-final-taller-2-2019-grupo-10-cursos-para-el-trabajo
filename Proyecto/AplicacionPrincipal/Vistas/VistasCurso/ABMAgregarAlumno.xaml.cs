@@ -22,6 +22,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
     /// </summary>
     public partial class ABMAgregarAlumno : Window
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         List<Beneficiario> beneficiarios;
         MySqlConnection conn;
         string mensaje;
@@ -69,6 +71,8 @@ namespace AplicacionPrincipal.Vistas.VistasCurso
             }
             catch (Exception ex)
             {
+                Logger.Error(ex, "Agregar alumno conexion");
+
                 MessageBox.Show("Error: " + ex.Message);
             }
 
