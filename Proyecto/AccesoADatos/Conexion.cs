@@ -19,7 +19,7 @@ namespace AccesoADatos
         /// <returns>Retorna la conexion</returns>
         public static MySqlConnection Conectar()
         {
-            conn = new MySqlConnection("Database = ProyectoDB; Data Source = localhost; User Id = root; Password = 493-admin");
+            conn = new MySqlConnection("Database = ProyectoDB; Data Source = localhost; User Id = root; Password =");
 
             conn.Open();
 
